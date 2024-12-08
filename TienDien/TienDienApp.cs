@@ -79,5 +79,10 @@ namespace TienDien
             uocTinh1.Visible = true;
             tinhTienDien1.Visible = false;
         }
+
+        private void tinhTienDien1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

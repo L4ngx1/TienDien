@@ -30,21 +30,21 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlNav = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.lblQuanLiTienDien = new System.Windows.Forms.Label();
             this.btnTienDien = new System.Windows.Forms.Button();
             this.btnUocTinh = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dashboard1 = new TienDien.Dashboard();
-            this.tinhTienDien1 = new TienDien.TinhTienDien();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lblQuanLiTienDien = new System.Windows.Forms.Label();
             this.uocTinh1 = new TienDien.UocTinh();
+            this.tinhTienDien1 = new TienDien.TinhTienDien();
+            this.dashboard1 = new TienDien.Dashboard();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -69,59 +69,6 @@
             this.pnlNav.Name = "pnlNav";
             this.pnlNav.Size = new System.Drawing.Size(5, 60);
             this.pnlNav.TabIndex = 4;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(220, 158);
-            this.panel2.TabIndex = 0;
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(975, 3);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnClose.Size = new System.Drawing.Size(22, 22);
-            this.btnClose.TabIndex = 6;
-            this.btnClose.Text = "X";
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel3.Controls.Add(this.lblQuanLiTienDien);
-            this.panel3.Controls.Add(this.btnClose);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1000, 27);
-            this.panel3.TabIndex = 7;
-            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Mouse_Down);
-            this.panel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Mouse_Move);
-            // 
-            // lblQuanLiTienDien
-            // 
-            this.lblQuanLiTienDien.AutoSize = true;
-            this.lblQuanLiTienDien.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuanLiTienDien.Image = global::TienDien.Properties.Resources.conflict_23px;
-            this.lblQuanLiTienDien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblQuanLiTienDien.Location = new System.Drawing.Point(3, 5);
-            this.lblQuanLiTienDien.Name = "lblQuanLiTienDien";
-            this.lblQuanLiTienDien.Size = new System.Drawing.Size(206, 17);
-            this.lblQuanLiTienDien.TabIndex = 7;
-            this.lblQuanLiTienDien.Text = "       Hệ Thống Quản Lí Tiền Điện";
             // 
             // btnTienDien
             // 
@@ -181,6 +128,16 @@
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             this.btnDashboard.Leave += new System.EventHandler(this.btnDashboard_Leave);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(220, 158);
+            this.panel2.TabIndex = 0;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::TienDien.Properties.Resources.electricity_icon_original;
@@ -190,26 +147,69 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // dashboard1
+            // btnClose
             // 
-            this.dashboard1.Location = new System.Drawing.Point(217, 26);
-            this.dashboard1.Name = "dashboard1";
-            this.dashboard1.Size = new System.Drawing.Size(780, 573);
-            this.dashboard1.TabIndex = 10;
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(975, 3);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnClose.Size = new System.Drawing.Size(22, 22);
+            this.btnClose.TabIndex = 6;
+            this.btnClose.Text = "X";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel3.Controls.Add(this.lblQuanLiTienDien);
+            this.panel3.Controls.Add(this.btnClose);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1000, 27);
+            this.panel3.TabIndex = 7;
+            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Mouse_Down);
+            this.panel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Mouse_Move);
+            // 
+            // lblQuanLiTienDien
+            // 
+            this.lblQuanLiTienDien.AutoSize = true;
+            this.lblQuanLiTienDien.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuanLiTienDien.Image = global::TienDien.Properties.Resources.conflict_23px;
+            this.lblQuanLiTienDien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblQuanLiTienDien.Location = new System.Drawing.Point(3, 5);
+            this.lblQuanLiTienDien.Name = "lblQuanLiTienDien";
+            this.lblQuanLiTienDien.Size = new System.Drawing.Size(206, 17);
+            this.lblQuanLiTienDien.TabIndex = 7;
+            this.lblQuanLiTienDien.Text = "       Hệ Thống Quản Lí Tiền Điện";
+            // 
+            // uocTinh1
+            // 
+            this.uocTinh1.Location = new System.Drawing.Point(220, 27);
+            this.uocTinh1.Name = "uocTinh1";
+            this.uocTinh1.Size = new System.Drawing.Size(780, 573);
+            this.uocTinh1.TabIndex = 8;
             // 
             // tinhTienDien1
             // 
-            this.tinhTienDien1.Location = new System.Drawing.Point(217, 26);
+            this.tinhTienDien1.Location = new System.Drawing.Point(220, 27);
             this.tinhTienDien1.Name = "tinhTienDien1";
             this.tinhTienDien1.Size = new System.Drawing.Size(780, 573);
             this.tinhTienDien1.TabIndex = 9;
             // 
-            // uocTinh1
+            // dashboard1
             // 
-            this.uocTinh1.Location = new System.Drawing.Point(217, 27);
-            this.uocTinh1.Name = "uocTinh1";
-            this.uocTinh1.Size = new System.Drawing.Size(780, 573);
-            this.uocTinh1.TabIndex = 8;
+            this.dashboard1.Location = new System.Drawing.Point(220, 27);
+            this.dashboard1.Name = "dashboard1";
+            this.dashboard1.Size = new System.Drawing.Size(780, 573);
+            this.dashboard1.TabIndex = 10;
             // 
             // TienDienApp
             // 
@@ -231,9 +231,9 @@
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Mouse_Move);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
