@@ -16,5 +16,10 @@ namespace TienDien
         {
             InitializeComponent();
         }
+
+        private void TinhTienDien_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

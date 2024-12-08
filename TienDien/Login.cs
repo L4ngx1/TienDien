@@ -41,10 +41,27 @@ namespace TienDien
         {
             this.Close();
         }
+        Modify modify = new Modify();
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            TienDienApp appForm = new TienDienApp();
-            appForm.Show();
+            string tentk = txtUsername.Text;
+            string matkhau = txtPassword.Text;
+            if (tentk.Trim() == "") { MessageBox.Show("Vui lòng nhập tên tài khoản!"); }
+            else if (matkhau.Trim() == "") { MessageBox.Show("Vui lòng nhập mật khẩu!"); }
+            else {
+                string query = "Select * from TaiKhoan where TenTaiKhoan = '" + tentk + "' and MatKhau = '" + matkhau + "'";
+                if (modify.TaiKhoans(query).Count != 0)
+                {
+                    TienDienApp appForm = new TienDienApp();
+                    appForm.ShowDialog();
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Tên tài khoản hoặc mật khẩu không chính xác!");
+                }
+            }
+           
         }
 
         private void txtPassword_KeyDown(object sender, KeyEventArgs e)
@@ -54,6 +71,26 @@ namespace TienDien
                 btnLogin.PerformClick();
                 e.SuppressKeyPress = true;
             }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
