@@ -35,7 +35,7 @@
             // 
             this.lblUocTinh.AutoSize = true;
             this.lblUocTinh.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUocTinh.Location = new System.Drawing.Point(205, 44);
+            this.lblUocTinh.Location = new System.Drawing.Point(3, 0);
             this.lblUocTinh.Name = "lblUocTinh";
             this.lblUocTinh.Size = new System.Drawing.Size(176, 25);
             this.lblUocTinh.TabIndex = 1;

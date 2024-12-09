@@ -35,12 +35,14 @@ namespace TienDien
         Modify modify = new Modify();
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            string xacnhanMK=txtXacNhanMK.Text;
             string tentk=txtUsername.Text;
             string matkhau = txtPassword.Text;
             string email = txtEmail.Text;
-            if (tentk.Trim() == "") { MessageBox.Show("Vui lòng nhập tên tài khoản!"); }
-            else if (matkhau.Trim() == "") { MessageBox.Show("Vui lòng nhập mật khẩu!"); }
-            else if (email.Trim() == "") { MessageBox.Show("Vui lòng nhập Email!"); }
+            if (email.Trim() == "") { MessageBox.Show("Vui lòng nhập Email!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            else if (tentk.Trim() == "") { MessageBox.Show("Vui lòng nhập tên tài khoản!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            else if (matkhau.Trim() == "") { MessageBox.Show("Vui lòng nhập mật khẩu!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            else if (xacnhanMK.Trim() != matkhau.Trim()) { MessageBox.Show("Mật khẩu xác nhận không trùng!","Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             else if (modify.TaiKhoans("Select * from TaiKhoan where Email = '" + email + "'").Count() != 0)
             {
 
@@ -53,43 +55,18 @@ namespace TienDien
                 {
                     string query = "Insert into TaiKhoan values ('" + tentk + "','" + matkhau + "','" + email + "')";
                     modify.Command(query);
-                    MessageBox.Show("Đăng ký thành công!");
+                    MessageBox.Show("Đăng ký thành công!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
                 catch
                 {
-                    MessageBox.Show("Tên tài khoản này đã được đăng ký!");
+                    MessageBox.Show("Tên tài khoản này đã được đăng ký!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void Register_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblUsername_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUsername_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblEmail_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEmail_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

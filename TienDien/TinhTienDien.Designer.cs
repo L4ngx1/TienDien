@@ -35,7 +35,7 @@
             // 
             this.lblTinhTienDien.AutoSize = true;
             this.lblTinhTienDien.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTinhTienDien.Location = new System.Drawing.Point(181, 51);
+            this.lblTinhTienDien.Location = new System.Drawing.Point(3, 0);
             this.lblTinhTienDien.Name = "lblTinhTienDien";
             this.lblTinhTienDien.Size = new System.Drawing.Size(127, 25);
             this.lblTinhTienDien.TabIndex = 1;

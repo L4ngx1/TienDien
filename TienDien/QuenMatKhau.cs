@@ -20,19 +20,19 @@ namespace TienDien
 
         private void btnQuenMK_Click(object sender, EventArgs e)
         {
-            string email = textBoxEmail.Text;
-            if (email.Trim() == "") { MessageBox.Show("Vui lòng nhập Email!"); }
+            string email = txtEmail.Text;
+            if (email.Trim() == "") { MessageBox.Show("Vui lòng nhập Email!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             else
             {
                 string query = "Select * from TaiKhoan where Email ='" + email + "'";
                 if (modify.TaiKhoans(query).Count != 0)
                 {
-                    MessageBox.Show("Mật khẩu của bạn là: " + modify.TaiKhoans(query)[0].MatKhau);
+                    MessageBox.Show("Mật khẩu của bạn là: " + modify.TaiKhoans(query)[0].MatKhau,"Restore",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Email chưa được đăng ký!!");
+                    MessageBox.Show("Email chưa được đăng ký!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
@@ -50,6 +50,11 @@ namespace TienDien
                 btnQuenMK.PerformClick();
                 e.SuppressKeyPress = true;
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
