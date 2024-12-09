@@ -46,7 +46,12 @@ namespace TienDien
         {
             string tentk = txtUsername.Text;
             string matkhau = txtPassword.Text;
-            if (tentk.Trim() == "") { MessageBox.Show("Vui lòng nhập tên tài khoản!"); }
+            if (tentk == "admin" && matkhau == "admin")
+            {
+                AdminForm form= new AdminForm();
+                form.Show();
+            }
+            else if (tentk.Trim() == "") { MessageBox.Show("Vui lòng nhập tên tài khoản!"); }
             else if (matkhau.Trim() == "") { MessageBox.Show("Vui lòng nhập mật khẩu!"); }
             else {
                 string query = "Select * from TaiKhoan where TenTaiKhoan = '" + tentk + "' and MatKhau = '" + matkhau + "'";

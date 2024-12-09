@@ -9,7 +9,7 @@ namespace TienDien
 {
     internal class Connection
     {
-        private static string stringConnection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Modern15\Source\Repos\TienDien\TienDien\Database1.mdf;Integrated Security=True";
+        private static string stringConnection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Modern15\source\repos\L4ngx1\TienDien\TienDien\Database1.mdf;Integrated Security=True";
         public static SqlConnection GetSqlConnection()
         {
             return new SqlConnection(stringConnection);
