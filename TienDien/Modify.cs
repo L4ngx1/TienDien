@@ -29,5 +29,15 @@ namespace TienDien
             }
             return taiKhoans;
         }
+        public void Command(string query) // dang ky tai khoan
+        {
+            using (SqlConnection sqlConnection = Connection.GetSqlConnection())
+            {
+                sqlConnection.Open();
+                sqlCommand =  new SqlCommand (query, sqlConnection);
+                sqlCommand.ExecuteNonQuery(); // thuc thi cau truy van
+                sqlConnection.Close();
+            }
+        }
     }
 }

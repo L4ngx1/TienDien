@@ -49,7 +49,7 @@ namespace TienDien
             if (tentk == "admin" && matkhau == "admin")
             {
                 AdminForm form= new AdminForm();
-                form.Show();
+                form.ShowDialog();
             }
             else if (tentk.Trim() == "") { MessageBox.Show("Vui lòng nhập tên tài khoản!"); }
             else if (matkhau.Trim() == "") { MessageBox.Show("Vui lòng nhập mật khẩu!"); }
@@ -96,6 +96,12 @@ namespace TienDien
         private void txtUsername_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            QuenMatKhau quenMatKhau = new QuenMatKhau();   
+            quenMatKhau.ShowDialog();
         }
     }
 }

@@ -32,10 +32,35 @@ namespace TienDien
         {
             InitializeComponent();
         }
+        Modify modify = new Modify();
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            this.Close();
-            MessageBox.Show("Register succesfully!!!", "Register",MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string tentk=txtUsername.Text;
+            string matkhau = txtPassword.Text;
+            string email = txtEmail.Text;
+            if (tentk.Trim() == "") { MessageBox.Show("Vui lòng nhập tên tài khoản!"); }
+            else if (matkhau.Trim() == "") { MessageBox.Show("Vui lòng nhập mật khẩu!"); }
+            else if (email.Trim() == "") { MessageBox.Show("Vui lòng nhập Email!"); }
+            else if (modify.TaiKhoans("Select * from TaiKhoan where Email = '" + email + "'").Count() != 0)
+            {
+
+                MessageBox.Show("Email này đã được đăng ký!", "Register", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else
+            {
+                try
+                {
+                    string query = "Insert into TaiKhoan values ('" + tentk + "','" + matkhau + "','" + email + "')";
+                    modify.Command(query);
+                    MessageBox.Show("Đăng ký thành công!");
+                    this.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Tên tài khoản này đã được đăng ký!");
+                }
+            }
         }
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -43,6 +68,26 @@ namespace TienDien
         }
 
         private void Register_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblUsername_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblEmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
         {
 
         }
