@@ -42,7 +42,7 @@
             this.dashboard1 = new TienDien.Dashboard();
             this.tinhTienDien1 = new TienDien.TinhTienDien();
             this.uocTinh1 = new TienDien.UocTinh();
-            this.btnXuatHoaDon = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -243,22 +243,13 @@
             this.uocTinh1.Size = new System.Drawing.Size(1040, 705);
             this.uocTinh1.TabIndex = 8;
             // 
-            // btnXuatHoaDon
+            // dateTimePicker1
             // 
-            this.btnXuatHoaDon.BackColor = System.Drawing.Color.Navy;
-            this.btnXuatHoaDon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnXuatHoaDon.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnXuatHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXuatHoaDon.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXuatHoaDon.ForeColor = System.Drawing.Color.White;
-            this.btnXuatHoaDon.Location = new System.Drawing.Point(658, 448);
-            this.btnXuatHoaDon.Margin = new System.Windows.Forms.Padding(4);
-            this.btnXuatHoaDon.Name = "btnXuatHoaDon";
-            this.btnXuatHoaDon.Size = new System.Drawing.Size(191, 37);
-            this.btnXuatHoaDon.TabIndex = 12;
-            this.btnXuatHoaDon.Text = "Xuất hóa đơn";
-            this.btnXuatHoaDon.UseVisualStyleBackColor = false;
-            this.btnXuatHoaDon.Click += new System.EventHandler(this.btnXuatHoaDon_Click);
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(916, 40);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(404, 30);
+            this.dateTimePicker1.TabIndex = 13;
             // 
             // TienDienApp
             // 
@@ -266,7 +257,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1333, 738);
-            this.Controls.Add(this.btnXuatHoaDon);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.dashboard1);
             this.Controls.Add(this.tinhTienDien1);
@@ -305,6 +296,6 @@
         private TinhTienDien tinhTienDien1;
         private Dashboard dashboard1;
         private System.Windows.Forms.Button btnRegister;
-        private System.Windows.Forms.Button btnXuatHoaDon;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

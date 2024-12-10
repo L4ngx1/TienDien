@@ -16,5 +16,10 @@ namespace TienDien
         {
             InitializeComponent();
         }
+
+        private void lblDashboard_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
