@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace TienDien
 {
@@ -16,12 +17,5 @@ namespace TienDien
         {
             InitializeComponent();
         }
-
-        private void TinhTienDien_Load(object sender, EventArgs e)
-        {
-
-        }
-
-       
     }
 }

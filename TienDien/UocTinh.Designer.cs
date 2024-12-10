@@ -47,7 +47,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lblUocTinh);
             this.Name = "UocTinh";
-            this.Size = new System.Drawing.Size(780, 573);
+            this.Size = new System.Drawing.Size(880, 672);
             this.ResumeLayout(false);
             this.PerformLayout();
 

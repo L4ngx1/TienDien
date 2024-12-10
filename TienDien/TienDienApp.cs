@@ -22,6 +22,9 @@ namespace TienDien
             pnlNav.Top = btnDashboard.Top;
             pnlNav.Left = btnDashboard.Left;
             btnDashboard.BackColor = Color.FromArgb(50, 153, 222);
+            dashboard1.Visible = true;
+            uocTinh1.Visible = false;
+            tinhTienDien1.Visible = false;
         }
         private void Mouse_Down(object sender, MouseEventArgs e)
         {
@@ -62,7 +65,7 @@ namespace TienDien
             dashboard1.Visible = true;
             uocTinh1.Visible = false;
             tinhTienDien1.Visible = false;
-            
+
         }
         private void btnTienDien_Click(object sender, EventArgs e)
         {
@@ -82,22 +85,13 @@ namespace TienDien
             uocTinh1.Visible = true;
             tinhTienDien1.Visible = false;
         }
+        private void btnSignout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
         private void tinhTienDien1_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnRegister_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            Login login = new Login();
-            login.Show();
-        }
-
-        private void btnXuatHoaDon_Click(object sender, EventArgs e)
-        {
-         
 
         }
     }
