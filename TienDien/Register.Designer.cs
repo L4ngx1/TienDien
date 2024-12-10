@@ -45,18 +45,20 @@
             // 
             this.lblRegisterAccount.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegisterAccount.ForeColor = System.Drawing.Color.Navy;
-            this.lblRegisterAccount.Location = new System.Drawing.Point(75, 50);
+            this.lblRegisterAccount.Location = new System.Drawing.Point(74, 59);
+            this.lblRegisterAccount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRegisterAccount.Name = "lblRegisterAccount";
-            this.lblRegisterAccount.Size = new System.Drawing.Size(250, 40);
+            this.lblRegisterAccount.Size = new System.Drawing.Size(366, 49);
             this.lblRegisterAccount.TabIndex = 12;
-            this.lblRegisterAccount.Text = "Register Account";
+            this.lblRegisterAccount.Text = "Đăng ký tài khoản";
             this.lblRegisterAccount.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(50, 207);
+            this.txtUsername.Location = new System.Drawing.Point(67, 255);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(300, 20);
+            this.txtUsername.Size = new System.Drawing.Size(399, 22);
             this.txtUsername.TabIndex = 1;
             // 
             // lblUsername
@@ -64,9 +66,10 @@
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.Color.Black;
-            this.lblUsername.Location = new System.Drawing.Point(47, 187);
+            this.lblUsername.Location = new System.Drawing.Point(63, 230);
+            this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(108, 17);
+            this.lblUsername.Size = new System.Drawing.Size(138, 23);
             this.lblUsername.TabIndex = 7;
             this.lblUsername.Text = "Tên Đăng Nhập:";
             // 
@@ -75,17 +78,19 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.Color.Black;
-            this.lblPassword.Location = new System.Drawing.Point(47, 242);
+            this.lblPassword.Location = new System.Drawing.Point(63, 298);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(71, 17);
+            this.lblPassword.Size = new System.Drawing.Size(92, 23);
             this.lblPassword.TabIndex = 6;
             this.lblPassword.Text = "Mật Khẩu:";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(50, 262);
+            this.txtPassword.Location = new System.Drawing.Point(67, 322);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(300, 20);
+            this.txtPassword.Size = new System.Drawing.Size(399, 22);
             this.txtPassword.TabIndex = 2;
             // 
             // btnRegister
@@ -96,9 +101,10 @@
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegister.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.ForeColor = System.Drawing.Color.White;
-            this.btnRegister.Location = new System.Drawing.Point(100, 377);
+            this.btnRegister.Location = new System.Drawing.Point(133, 464);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(200, 30);
+            this.btnRegister.Size = new System.Drawing.Size(267, 37);
             this.btnRegister.TabIndex = 3;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
@@ -113,10 +119,11 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(366, 12);
+            this.btnClose.Location = new System.Drawing.Point(488, 15);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnClose.Size = new System.Drawing.Size(22, 22);
+            this.btnClose.Size = new System.Drawing.Size(29, 27);
             this.btnClose.TabIndex = 4;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -127,17 +134,19 @@
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.Black;
-            this.lblEmail.Location = new System.Drawing.Point(48, 132);
+            this.lblEmail.Location = new System.Drawing.Point(64, 162);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(46, 17);
+            this.lblEmail.Size = new System.Drawing.Size(59, 23);
             this.lblEmail.TabIndex = 5;
             this.lblEmail.Text = "Email:";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(51, 152);
+            this.txtEmail.Location = new System.Drawing.Point(68, 187);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(300, 20);
+            this.txtEmail.Size = new System.Drawing.Size(399, 22);
             this.txtEmail.TabIndex = 0;
             // 
             // lblXacNhanMK
@@ -145,25 +154,28 @@
             this.lblXacNhanMK.AutoSize = true;
             this.lblXacNhanMK.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblXacNhanMK.ForeColor = System.Drawing.Color.Black;
-            this.lblXacNhanMK.Location = new System.Drawing.Point(48, 297);
+            this.lblXacNhanMK.Location = new System.Drawing.Point(64, 366);
+            this.lblXacNhanMK.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblXacNhanMK.Name = "lblXacNhanMK";
-            this.lblXacNhanMK.Size = new System.Drawing.Size(130, 17);
+            this.lblXacNhanMK.Size = new System.Drawing.Size(167, 23);
             this.lblXacNhanMK.TabIndex = 14;
             this.lblXacNhanMK.Text = "Xác Nhận Mật Khẩu";
             // 
             // txtXacNhanMK
             // 
-            this.txtXacNhanMK.Location = new System.Drawing.Point(50, 317);
+            this.txtXacNhanMK.Location = new System.Drawing.Point(67, 390);
+            this.txtXacNhanMK.Margin = new System.Windows.Forms.Padding(4);
             this.txtXacNhanMK.Name = "txtXacNhanMK";
-            this.txtXacNhanMK.Size = new System.Drawing.Size(300, 20);
+            this.txtXacNhanMK.Size = new System.Drawing.Size(399, 22);
             this.txtXacNhanMK.TabIndex = 3;
+            this.txtXacNhanMK.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtXacNhanMK_KeyDown);
             // 
             // Register
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(400, 461);
+            this.ClientSize = new System.Drawing.Size(533, 567);
             this.Controls.Add(this.lblXacNhanMK);
             this.Controls.Add(this.txtXacNhanMK);
             this.Controls.Add(this.lblEmail);
@@ -178,6 +190,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Register";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

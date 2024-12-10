@@ -38,23 +38,22 @@ namespace TienDien
             }
         }
 
-        private void QuenMatKhau_Load(object sender, EventArgs e)
-        {
 
-        }
       
-        private void textBoxEmail_KeyDown(object sender, KeyEventArgs e)
+
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtEmail_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 btnQuenMK.PerformClick();
                 e.SuppressKeyPress = true;
             }
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

@@ -44,6 +44,7 @@ namespace TienDien
         Modify modify = new Modify();
         private void btnLogin_Click(object sender, EventArgs e)
         {
+           
             string tentk = txtUsername.Text;
             string matkhau = txtPassword.Text;
             if (tentk == "admin" && matkhau == "admin")
@@ -57,9 +58,11 @@ namespace TienDien
                 string query = "Select * from TaiKhoan where TenTaiKhoan = '" + tentk + "' and MatKhau = '" + matkhau + "'";
                 if (modify.TaiKhoans(query).Count != 0)
                 {
+                  
                     TienDienApp appForm = new TienDienApp();
                     appForm.ShowDialog();
                     
+
                 }
                 else
                 {

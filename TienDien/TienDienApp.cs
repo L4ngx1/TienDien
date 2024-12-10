@@ -84,5 +84,12 @@ namespace TienDien
         {
 
         }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Login login = new Login();
+            login.Show();
+        }
     }
 }

@@ -42,7 +42,7 @@ namespace TienDien
             if (email.Trim() == "") { MessageBox.Show("Vui lòng nhập Email!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             else if (tentk.Trim() == "") { MessageBox.Show("Vui lòng nhập tên tài khoản!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             else if (matkhau.Trim() == "") { MessageBox.Show("Vui lòng nhập mật khẩu!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-            else if (xacnhanMK.Trim() != matkhau.Trim()) { MessageBox.Show("Mật khẩu xác nhận không trùng!","Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            else if (xacnhanMK != matkhau) { MessageBox.Show("Mật khẩu xác nhận không trùng!","Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             else if (modify.TaiKhoans("Select * from TaiKhoan where Email = '" + email + "'").Count() != 0)
             {
 
@@ -67,6 +67,15 @@ namespace TienDien
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtXacNhanMK_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnRegister.PerformClick();
+                e.SuppressKeyPress = true;
+            }
         }
     }
 }
