@@ -29,44 +29,38 @@
         private void InitializeComponent()
         {
             this.lblDashboard = new System.Windows.Forms.Label();
-            this.btnXuatHoaDon = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblDashboard
             // 
             this.lblDashboard.AutoSize = true;
             this.lblDashboard.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDashboard.Location = new System.Drawing.Point(394, 148);
+            this.lblDashboard.Location = new System.Drawing.Point(196, 145);
             this.lblDashboard.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDashboard.Name = "lblDashboard";
-            this.lblDashboard.Size = new System.Drawing.Size(128, 32);
+            this.lblDashboard.Size = new System.Drawing.Size(127, 32);
             this.lblDashboard.TabIndex = 0;
-            this.lblDashboard.Text = "Dashboard";
+            this.lblDashboard.Text = "DashBoard";
             this.lblDashboard.Click += new System.EventHandler(this.lblDashboard_Click);
             // 
-            // btnXuatHoaDon
+            // label1
             // 
-            this.btnXuatHoaDon.BackColor = System.Drawing.Color.Navy;
-            this.btnXuatHoaDon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnXuatHoaDon.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnXuatHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXuatHoaDon.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXuatHoaDon.ForeColor = System.Drawing.Color.White;
-            this.btnXuatHoaDon.Location = new System.Drawing.Point(381, 408);
-            this.btnXuatHoaDon.Margin = new System.Windows.Forms.Padding(4);
-            this.btnXuatHoaDon.Name = "btnXuatHoaDon";
-            this.btnXuatHoaDon.Size = new System.Drawing.Size(191, 37);
-            this.btnXuatHoaDon.TabIndex = 13;
-            this.btnXuatHoaDon.Text = "Xuất hóa đơn";
-            this.btnXuatHoaDon.UseVisualStyleBackColor = false;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(196, 203);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 32);
+            this.label1.TabIndex = 14;
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnXuatHoaDon);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblDashboard);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Dashboard";
             this.Size = new System.Drawing.Size(1040, 705);
             this.ResumeLayout(false);
@@ -77,6 +71,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblDashboard;
-        private System.Windows.Forms.Button btnXuatHoaDon;
+        private System.Windows.Forms.Label label1;
     }
 }
