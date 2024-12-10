@@ -38,10 +38,11 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblQuanLiTienDien = new System.Windows.Forms.Label();
-            this.uocTinh1 = new TienDien.UocTinh();
-            this.tinhTienDien1 = new TienDien.TinhTienDien();
-            this.dashboard1 = new TienDien.Dashboard();
             this.btnRegister = new System.Windows.Forms.Button();
+            this.dashboard1 = new TienDien.Dashboard();
+            this.tinhTienDien1 = new TienDien.TinhTienDien();
+            this.uocTinh1 = new TienDien.UocTinh();
+            this.btnXuatHoaDon = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -201,30 +202,6 @@
             this.lblQuanLiTienDien.TabIndex = 7;
             this.lblQuanLiTienDien.Text = "       Hệ Thống Quản Lí Tiền Điện";
             // 
-            // uocTinh1
-            // 
-            this.uocTinh1.Location = new System.Drawing.Point(293, 33);
-            this.uocTinh1.Margin = new System.Windows.Forms.Padding(5);
-            this.uocTinh1.Name = "uocTinh1";
-            this.uocTinh1.Size = new System.Drawing.Size(1040, 705);
-            this.uocTinh1.TabIndex = 8;
-            // 
-            // tinhTienDien1
-            // 
-            this.tinhTienDien1.Location = new System.Drawing.Point(293, 33);
-            this.tinhTienDien1.Margin = new System.Windows.Forms.Padding(5);
-            this.tinhTienDien1.Name = "tinhTienDien1";
-            this.tinhTienDien1.Size = new System.Drawing.Size(1040, 705);
-            this.tinhTienDien1.TabIndex = 9;
-            // 
-            // dashboard1
-            // 
-            this.dashboard1.Location = new System.Drawing.Point(293, 33);
-            this.dashboard1.Margin = new System.Windows.Forms.Padding(5);
-            this.dashboard1.Name = "dashboard1";
-            this.dashboard1.Size = new System.Drawing.Size(1040, 705);
-            this.dashboard1.TabIndex = 10;
-            // 
             // btnRegister
             // 
             this.btnRegister.BackColor = System.Drawing.Color.Navy;
@@ -242,12 +219,54 @@
             this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
+            // dashboard1
+            // 
+            this.dashboard1.Location = new System.Drawing.Point(293, 33);
+            this.dashboard1.Margin = new System.Windows.Forms.Padding(5);
+            this.dashboard1.Name = "dashboard1";
+            this.dashboard1.Size = new System.Drawing.Size(1040, 705);
+            this.dashboard1.TabIndex = 10;
+            // 
+            // tinhTienDien1
+            // 
+            this.tinhTienDien1.Location = new System.Drawing.Point(293, 33);
+            this.tinhTienDien1.Margin = new System.Windows.Forms.Padding(5);
+            this.tinhTienDien1.Name = "tinhTienDien1";
+            this.tinhTienDien1.Size = new System.Drawing.Size(1040, 705);
+            this.tinhTienDien1.TabIndex = 9;
+            // 
+            // uocTinh1
+            // 
+            this.uocTinh1.Location = new System.Drawing.Point(293, 33);
+            this.uocTinh1.Margin = new System.Windows.Forms.Padding(5);
+            this.uocTinh1.Name = "uocTinh1";
+            this.uocTinh1.Size = new System.Drawing.Size(1040, 705);
+            this.uocTinh1.TabIndex = 8;
+            // 
+            // btnXuatHoaDon
+            // 
+            this.btnXuatHoaDon.BackColor = System.Drawing.Color.Navy;
+            this.btnXuatHoaDon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnXuatHoaDon.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnXuatHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXuatHoaDon.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXuatHoaDon.ForeColor = System.Drawing.Color.White;
+            this.btnXuatHoaDon.Location = new System.Drawing.Point(658, 448);
+            this.btnXuatHoaDon.Margin = new System.Windows.Forms.Padding(4);
+            this.btnXuatHoaDon.Name = "btnXuatHoaDon";
+            this.btnXuatHoaDon.Size = new System.Drawing.Size(191, 37);
+            this.btnXuatHoaDon.TabIndex = 12;
+            this.btnXuatHoaDon.Text = "Xuất hóa đơn";
+            this.btnXuatHoaDon.UseVisualStyleBackColor = false;
+            this.btnXuatHoaDon.Click += new System.EventHandler(this.btnXuatHoaDon_Click);
+            // 
             // TienDienApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1333, 738);
+            this.Controls.Add(this.btnXuatHoaDon);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.dashboard1);
             this.Controls.Add(this.tinhTienDien1);
@@ -286,5 +305,6 @@
         private TinhTienDien tinhTienDien1;
         private Dashboard dashboard1;
         private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.Button btnXuatHoaDon;
     }
 }
