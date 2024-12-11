@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -43,8 +44,7 @@ namespace TienDien
         }
         Modify modify = new Modify();
         private void btnLogin_Click(object sender, EventArgs e)
-        {
-           
+        {   
             string tentk = txtUsername.Text;
             string matkhau = txtPassword.Text;
             if (tentk == "admin" && matkhau == "admin")
@@ -58,8 +58,9 @@ namespace TienDien
                 string query = "Select * from TaiKhoan where TenTaiKhoan = '" + tentk + "' and MatKhau = '" + matkhau + "'";
                 if (modify.TaiKhoans(query).Count != 0)
                 {
-                  
+                 
                     TienDienApp appForm = new TienDienApp();
+                
                     appForm.ShowDialog();
                     
 
@@ -86,5 +87,7 @@ namespace TienDien
             QuenMatKhau quenMatKhau = new QuenMatKhau();   
             quenMatKhau.ShowDialog();
         }
+
+
     }
 }

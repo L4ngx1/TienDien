@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Data;
+using System.Reflection.Emit;
 namespace TienDien
 {
     internal class Modify
@@ -39,5 +41,22 @@ namespace TienDien
                 sqlConnection.Close();
             }
         }
+
+        SqlDataAdapter dataAdapter;
+        public DataTable getHoaDon(string tentk)
+        {   
+            DataTable dt = new DataTable();
+            string query = "Select * from HoaDon where TenTaiKhoan = '" + tentk + "'";
+            using (SqlConnection sqlConnection = Connection.GetSqlConnection())
+            {
+                sqlConnection.Open();
+                dataAdapter = new SqlDataAdapter(query, sqlConnection);
+                dataAdapter.Fill(dt);
+                sqlConnection.Close();
+            }
+            return dt;
+
+        }
+       
     }
 }
