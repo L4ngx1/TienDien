@@ -82,6 +82,7 @@ namespace TienDien
             this.btnXuatHoaDon.TabIndex = 14;
             this.btnXuatHoaDon.Text = "Xuất hóa đơn";
             this.btnXuatHoaDon.UseVisualStyleBackColor = false;
+            this.btnXuatHoaDon.Click += new System.EventHandler(this.btnXuatHoaDon_Click);
             // 
             // button1
             // 

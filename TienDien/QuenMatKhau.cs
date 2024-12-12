@@ -16,18 +16,18 @@ namespace TienDien
         {
             InitializeComponent();
         }
-        Modify modify = new Modify();
 
         private void btnQuenMK_Click(object sender, EventArgs e)
         {
+            TaiKhoan tk = new TaiKhoan();
             string email = txtEmail.Text;
             if (email.Trim() == "") { MessageBox.Show("Vui lòng nhập Email!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             else
             {
                 string query = "Select * from TaiKhoan where Email ='" + email + "'";
-                if (modify.TaiKhoans(query).Count != 0)
+                if (tk.TaiKhoans(query).Count != 0)
                 {
-                    MessageBox.Show("Mật khẩu của bạn là: " + modify.TaiKhoans(query)[0].MatKhau,"Restore",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show("Mật khẩu của bạn là: " + tk.TaiKhoans(query)[0].MatKhau,"Restore",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     this.Close();
                 }
                 else

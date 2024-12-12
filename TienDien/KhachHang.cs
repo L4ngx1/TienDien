@@ -8,35 +8,22 @@ namespace TienDien
 {
     internal class KhachHang
     {
-        private string maKH;
-        private string hoTen;
-        private string diachi;
-        private string sdt;
-        private double elecUsage;
-        public KhachHang(string maKH, string hoTen, string diachi, string sdt, double elecUsage)
-        {
-            this.maKH = maKH;
-            this.hoTen = hoTen;
-            this.diachi = diachi;
-            this.sdt = sdt;
-            this.elecUsage = elecUsage;
-        }
-        public string MaKH { get => maKH; set => maKH = value; }
-        public string HoTen { get => hoTen; set => hoTen = value; }
-        public string DiaChi { get => diachi; set => diachi = value; }
-        public string SDT { get => sdt; set => sdt = value; }
-        public double ElecUsage { get => elecUsage; set => elecUsage = value; }
+        public string maKH { get; set; }
+        public string hoten { get; set; }
+        public string diachi { get; set; }
+        public string sdt { get; set; }
+        public double elecUsage { get; set; }
 
         public double CalculateBill()
         {
             double rate = 0;
-            if (ElecUsage <= 50)
+            if (elecUsage <= 50)
                 rate = 1000;
-            else if (ElecUsage <= 100)
+            else if (elecUsage <= 100)
                 rate = 1500;
             else
                 rate = 2000;
-            return ElecUsage * rate;
+            return elecUsage * rate;
         }
     }
 }

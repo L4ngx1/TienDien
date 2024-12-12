@@ -41,10 +41,9 @@ namespace TienDien
         {
             this.Close();
         }
-        Modify modify = new Modify();
         private void btnLogin_Click(object sender, EventArgs e)
         {
-           
+            TaiKhoan tk = new TaiKhoan();
             string tentk = txtUsername.Text;
             string matkhau = txtPassword.Text;
             if (tentk == "admin" && matkhau == "admin")
@@ -56,7 +55,7 @@ namespace TienDien
             else if (matkhau.Trim() == "") { MessageBox.Show("Vui lòng nhập mật khẩu!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             else {
                 string query = "Select * from TaiKhoan where TenTaiKhoan = '" + tentk + "' and MatKhau = '" + matkhau + "'";
-                if (modify.TaiKhoans(query).Count != 0)
+                if (tk.TaiKhoans(query).Count != 0)
                 {
                   
                     TienDienApp appForm = new TienDienApp();

@@ -17,5 +17,11 @@ namespace TienDien
         {
             InitializeComponent();
         }
+
+        private void btnXuatHoaDon_Click(object sender, EventArgs e)
+        {
+            HoaDonForm hdform = new HoaDonForm();
+            hdform.ShowDialog();
+        }
     }
 }
