@@ -11,7 +11,8 @@
               <TextRun>
                 <Value>=First(Fields!HoTen.Value, "DataSet2")</Value>
                 <Style>
-                  <FontSize>12pt</FontSize>
+                  <FontFamily>Segoe UI</FontFamily>
+                  <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -19,10 +20,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>HoTen</rd:DefaultName>
-        <Top>0.17583in</Top>
-        <Left>1.85986in</Left>
+        <Top>0.87375in</Top>
+        <Left>1.98139in</Left>
         <Height>0.25in</Height>
-        <Width>4.23958in</Width>
+        <Width>2.93055in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -41,17 +42,22 @@
             <TextRuns>
               <TextRun>
                 <Value>=Sum(Fields!ThanhTien.Value, "DataSet1")</Value>
-                <Style />
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                  <FontSize>11pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>ThanhTien</rd:DefaultName>
-        <Top>4.2175in</Top>
-        <Left>4.29042in</Left>
-        <Height>0.25in</Height>
-        <Width>1in</Width>
+        <Top>5.04736in</Top>
+        <Left>3.98833in</Left>
+        <Height>0.28125in</Height>
+        <Width>2.12153in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -70,9 +76,9 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Họ Tên Khách Hàng:</Value>
+                <Value>Họ và tên khách hàng:</Value>
                 <Style>
-                  <FontSize>12pt</FontSize>
+                  <FontFamily>Segoe UI</FontFamily>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -80,10 +86,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox10</rd:DefaultName>
-        <Top>0.17583in</Top>
-        <Left>0.05778in</Left>
+        <Top>0.87375in</Top>
+        <Left>0.33556in</Left>
         <Height>0.25in</Height>
-        <Width>1.73042in</Width>
+        <Width>1.49653in</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -104,7 +110,8 @@
               <TextRun>
                 <Value>=First(Fields!SoDienThoai.Value, "DataSet2")</Value>
                 <Style>
-                  <FontSize>12pt</FontSize>
+                  <FontFamily>Segoe UI</FontFamily>
+                  <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -112,10 +119,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>SoDienThoai</rd:DefaultName>
-        <Top>0.57167in</Top>
-        <Left>1.85986in</Left>
+        <Top>1.72792in</Top>
+        <Left>1.95834in</Left>
         <Height>0.25in</Height>
-        <Width>4.23958in</Width>
+        <Width>2.95361in</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -136,7 +143,8 @@
               <TextRun>
                 <Value>=First(Fields!Email.Value, "DataSet2")</Value>
                 <Style>
-                  <FontSize>12pt</FontSize>
+                  <FontFamily>Segoe UI</FontFamily>
+                  <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -144,10 +152,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Email</rd:DefaultName>
-        <Top>0.97792in</Top>
-        <Left>1.85986in</Left>
+        <Top>2.16542in</Top>
+        <Left>1.94445in</Left>
         <Height>0.25in</Height>
-        <Width>4.23958in</Width>
+        <Width>2.9675in</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -168,7 +176,8 @@
               <TextRun>
                 <Value>=First(Fields!DiaChi.Value, "DataSet2")</Value>
                 <Style>
-                  <FontSize>12pt</FontSize>
+                  <FontFamily>Segoe UI</FontFamily>
+                  <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -176,10 +185,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>DiaChi</rd:DefaultName>
-        <Top>1.405in</Top>
-        <Left>1.85986in</Left>
+        <Top>1.31125in</Top>
+        <Left>1.98139in</Left>
         <Height>0.25in</Height>
-        <Width>4.23958in</Width>
+        <Width>2.93055in</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -195,18 +204,21 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.65278in</Width>
+              <Width>1.66319in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.65278in</Width>
+              <Width>1.93931in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.65278in</Width>
+              <Width>1.32639in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.32167in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.25in</Height>
+              <Height>0.31771in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -217,11 +229,16 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>So Dien</Value>
-                              <Style />
+                              <Value>Tên Tài Khoản</Value>
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox17</rd:DefaultName>
@@ -230,6 +247,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -247,11 +265,16 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Thang Hoa Don</Value>
-                              <Style />
+                              <Value>Số Điện Tiêu Thụ(kWh)</Value>
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox19</rd:DefaultName>
@@ -260,6 +283,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -277,11 +301,16 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Trang Thai</Value>
-                              <Style />
+                              <Value>Tháng Hóa Đơn</Value>
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox21</rd:DefaultName>
@@ -290,6 +319,43 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox31">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Thành Tiền(VND)</Value>
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox31</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -301,11 +367,45 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.25in</Height>
+              <Height>0.31771in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="SoDien">
+                    <Textbox Name="TenTaiKhoan">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!TenTaiKhoan.Value</Value>
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>TenTaiKhoan</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="SoDien1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -313,13 +413,17 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!SoDien.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>SoDien</rd:DefaultName>
+                      <rd:DefaultName>SoDien1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -335,7 +439,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ThangHoaDon">
+                    <Textbox Name="ThangHoaDon1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -343,13 +447,17 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!ThangHoaDon.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ThangHoaDon</rd:DefaultName>
+                      <rd:DefaultName>ThangHoaDon1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -365,21 +473,25 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="TrangThai">
+                    <Textbox Name="ThanhTien1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!TrangThai.Value</Value>
-                              <Style />
+                              <Value>=Fields!ThanhTien.Value</Value>
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>TrangThai</rd:DefaultName>
+                      <rd:DefaultName>ThanhTien1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -402,6 +514,7 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
+            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -415,10 +528,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>2.32167in</Top>
-        <Left>0.85986in</Left>
-        <Height>0.5in</Height>
-        <Width>4.95833in</Width>
+        <Top>3.32167in</Top>
+        <Left>0.16889in</Left>
+        <Height>0.63542in</Height>
+        <Width>6.25056in</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -426,11 +539,210 @@
           </Border>
         </Style>
       </Tablix>
+      <Textbox Name="Textbox23">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>TỔNG TIỀN(VND)</Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox23</rd:DefaultName>
+        <Top>4.75917in</Top>
+        <Left>3.98833in</Left>
+        <Height>0.26042in</Height>
+        <Width>2.12153in</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox12">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Số điện thoại:</Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox10</rd:DefaultName>
+        <Top>1.72792in</Top>
+        <Left>0.33556in</Left>
+        <Height>0.25in</Height>
+        <Width>1.04167in</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox13">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Email:</Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox10</rd:DefaultName>
+        <Top>2.16542in</Top>
+        <Left>0.33556in</Left>
+        <Height>0.25in</Height>
+        <Width>1.04167in</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox14">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Địa chỉ:</Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox10</rd:DefaultName>
+        <Top>1.31125in</Top>
+        <Left>0.33556in</Left>
+        <Height>0.25in</Height>
+        <Width>1.49653in</Width>
+        <ZIndex>10</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="MaHoaDon">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!MaHoaDon.Value, "DataSet1")</Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>MaHoaDon</rd:DefaultName>
+        <Top>0.43625in</Top>
+        <Left>1.98139in</Left>
+        <Height>0.25in</Height>
+        <Width>2.93055in</Width>
+        <ZIndex>11</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox11">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Mã hóa đơn:</Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox10</rd:DefaultName>
+        <Top>0.43625in</Top>
+        <Left>0.33555in</Left>
+        <Height>0.25in</Height>
+        <Width>1.49653in</Width>
+        <ZIndex>12</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>6in</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>6.80833in</Width>
   <Page>
     <PageHeader>
       <Height>0.875in</Height>
@@ -447,7 +759,7 @@
                   <Value>HÓA ĐƠN TIỀN ĐIỆN</Value>
                   <Style>
                     <FontFamily>Segoe UI</FontFamily>
-                    <FontSize>20pt</FontSize>
+                    <FontSize>24pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                     <Color>Navy</Color>
                   </Style>
@@ -459,68 +771,9 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.38417in</Top>
-          <Height>0.375in</Height>
-          <Width>6.5in</Width>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox11">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Mã Hóa Đơn:</Value>
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox10</rd:DefaultName>
-          <Height>0.25in</Height>
-          <Width>0.90278in</Width>
-          <ZIndex>1</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="MaHoaDon">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=Sum(Fields!MaHoaDon.Value, "DataSet1")</Value>
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Left</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>MaHoaDon</rd:DefaultName>
-          <Left>0.90278in</Left>
-          <Height>0.25in</Height>
-          <Width>1in</Width>
-          <ZIndex>2</ZIndex>
+          <Top>0.18056in</Top>
+          <Height>0.625in</Height>
+          <Width>6.80833in</Width>
           <Style>
             <Border>
               <Style>None</Style>

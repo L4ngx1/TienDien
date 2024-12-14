@@ -35,9 +35,8 @@ namespace TienDien
 
         private void HoaDonForm_Load(object sender, EventArgs e)
         {
-            
+            string tentk = TinhTienDien.SelectedUsername;
             Modify modify = new Modify();
-            string tentk = Login.CurrentUsername;
             reportViewer1.LocalReport.ReportEmbeddedResource = "TienDien.Report1.rdlc";
             ReportDataSource reportDataSource1 = new ReportDataSource();
             ReportDataSource reportDataSource2 = new ReportDataSource();

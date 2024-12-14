@@ -30,12 +30,16 @@ namespace TienDien
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblTinhTienDien = new System.Windows.Forms.Label();
             this.btnXuatHoaDon = new System.Windows.Forms.Button();
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnLoad = new System.Windows.Forms.Button();
             this.lblChuthich = new System.Windows.Forms.Label();
+            this.txtTentk = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.lblTentk = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,9 +102,9 @@ namespace TienDien
             this.btnLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoad.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoad.ForeColor = System.Drawing.Color.White;
-            this.btnLoad.Location = new System.Drawing.Point(40, 209);
+            this.btnLoad.Location = new System.Drawing.Point(519, 127);
             this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(247, 30);
+            this.btnLoad.Size = new System.Drawing.Size(321, 29);
             this.btnLoad.TabIndex = 17;
             this.btnLoad.Text = "Tải thông tin hóa đơn";
             this.btnLoad.UseVisualStyleBackColor = false;
@@ -116,10 +120,37 @@ namespace TienDien
             this.lblChuthich.TabIndex = 18;
             this.lblChuthich.Text = "Chú thích trạng thái: 1-Đã thanh toán  0-Chưa thanh toán";
             // 
+            // txtTentk
+            // 
+            this.txtTentk.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTentk.Location = new System.Drawing.Point(40, 127);
+            this.txtTentk.Name = "txtTentk";
+            this.txtTentk.Size = new System.Drawing.Size(473, 29);
+            this.txtTentk.TabIndex = 19;
+            this.txtTentk.TextChanged += new System.EventHandler(this.txtTentk_TextChanged);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // lblTentk
+            // 
+            this.lblTentk.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTentk.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblTentk.Location = new System.Drawing.Point(36, 103);
+            this.lblTentk.Name = "lblTentk";
+            this.lblTentk.Size = new System.Drawing.Size(428, 23);
+            this.lblTentk.TabIndex = 21;
+            this.lblTentk.Text = "Nhập tên tài khoản cần xuất hóa đơn";
+            this.lblTentk.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // TinhTienDien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblTentk);
+            this.Controls.Add(this.txtTentk);
             this.Controls.Add(this.lblChuthich);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.dataGridView1);
@@ -143,5 +174,8 @@ namespace TienDien
         private System.Windows.Forms.DataGridView dataGridView1;
         private Button btnLoad;
         private Label lblChuthich;
+        private TextBox txtTentk;
+        private ContextMenuStrip contextMenuStrip1;
+        private Label lblTentk;
     }
 }

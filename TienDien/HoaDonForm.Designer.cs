@@ -40,7 +40,7 @@
             this.reportViewer1.Location = new System.Drawing.Point(0, 31);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(660, 624);
+            this.reportViewer1.Size = new System.Drawing.Size(705, 624);
             this.reportViewer1.TabIndex = 0;
             // 
             // btnClose
@@ -52,7 +52,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(635, 3);
+            this.btnClose.Location = new System.Drawing.Point(680, 3);
             this.btnClose.Name = "btnClose";
             this.btnClose.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnClose.Size = new System.Drawing.Size(22, 22);
@@ -69,7 +69,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(660, 28);
+            this.panel3.Size = new System.Drawing.Size(705, 28);
             this.panel3.TabIndex = 8;
             this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Mouse_Down);
             this.panel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Mouse_Move);
@@ -90,7 +90,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(660, 652);
+            this.ClientSize = new System.Drawing.Size(705, 652);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.reportViewer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

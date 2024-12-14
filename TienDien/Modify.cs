@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using System.Reflection.Emit;
+using System.Windows.Forms;
 namespace TienDien
 {
     internal class Modify
@@ -28,7 +29,31 @@ namespace TienDien
             }
             return taiKhoans;
         }
-        public void Command(string query) // dang ky tai khoan
+        public object GetFieldValue(string fieldName, string tableName, string conditionField, string conditionValue)
+        {
+            object fieldValue = null;
+            string query = $"SELECT {fieldName} FROM {tableName} WHERE {conditionField} = @ConditionValue";
+
+            using (SqlConnection connection = Connection.GetSqlConnection())
+            {
+                try
+                {
+                    connection.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@ConditionValue", conditionValue);
+                        fieldValue = cmd.ExecuteScalar();
+                    }
+                }
+                catch
+                {
+                    fieldValue = null;
+                }
+            }
+
+            return fieldValue;
+        }
+        public void Command(string query)
         {
             using (SqlConnection sqlConnection = Connection.GetSqlConnection())
             {
