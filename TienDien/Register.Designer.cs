@@ -43,10 +43,8 @@
             this.txtSoDienThoai = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lblNgaySinh = new System.Windows.Forms.Label();
             this.lblHoTen = new System.Windows.Forms.Label();
             this.txtHoTen = new System.Windows.Forms.TextBox();
-            this.NgaySinh = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // lblRegisterAccount
@@ -62,7 +60,7 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(50, 370);
+            this.txtUsername.Location = new System.Drawing.Point(50, 320);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(300, 20);
             this.txtUsername.TabIndex = 5;
@@ -72,7 +70,7 @@
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.Color.Black;
-            this.lblUsername.Location = new System.Drawing.Point(48, 350);
+            this.lblUsername.Location = new System.Drawing.Point(47, 300);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(108, 17);
             this.lblUsername.TabIndex = 15;
@@ -83,7 +81,7 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.Color.Black;
-            this.lblPassword.Location = new System.Drawing.Point(48, 400);
+            this.lblPassword.Location = new System.Drawing.Point(47, 350);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(71, 17);
             this.lblPassword.TabIndex = 16;
@@ -91,7 +89,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(50, 420);
+            this.txtPassword.Location = new System.Drawing.Point(50, 370);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(300, 20);
             this.txtPassword.TabIndex = 6;
@@ -104,7 +102,7 @@
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegister.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.ForeColor = System.Drawing.Color.White;
-            this.btnRegister.Location = new System.Drawing.Point(100, 520);
+            this.btnRegister.Location = new System.Drawing.Point(100, 480);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(200, 30);
             this.btnRegister.TabIndex = 8;
@@ -135,7 +133,7 @@
             this.lblDiaChi.AutoSize = true;
             this.lblDiaChi.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiaChi.ForeColor = System.Drawing.Color.Black;
-            this.lblDiaChi.Location = new System.Drawing.Point(48, 300);
+            this.lblDiaChi.Location = new System.Drawing.Point(47, 250);
             this.lblDiaChi.Name = "lblDiaChi";
             this.lblDiaChi.Size = new System.Drawing.Size(57, 17);
             this.lblDiaChi.TabIndex = 14;
@@ -143,7 +141,7 @@
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.Location = new System.Drawing.Point(50, 320);
+            this.txtDiaChi.Location = new System.Drawing.Point(50, 270);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(300, 20);
             this.txtDiaChi.TabIndex = 4;
@@ -153,7 +151,7 @@
             this.lblXacNhanMK.AutoSize = true;
             this.lblXacNhanMK.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblXacNhanMK.ForeColor = System.Drawing.Color.Black;
-            this.lblXacNhanMK.Location = new System.Drawing.Point(48, 450);
+            this.lblXacNhanMK.Location = new System.Drawing.Point(47, 400);
             this.lblXacNhanMK.Name = "lblXacNhanMK";
             this.lblXacNhanMK.Size = new System.Drawing.Size(134, 17);
             this.lblXacNhanMK.TabIndex = 17;
@@ -161,7 +159,7 @@
             // 
             // txtXacNhanMK
             // 
-            this.txtXacNhanMK.Location = new System.Drawing.Point(50, 470);
+            this.txtXacNhanMK.Location = new System.Drawing.Point(50, 420);
             this.txtXacNhanMK.Name = "txtXacNhanMK";
             this.txtXacNhanMK.Size = new System.Drawing.Size(300, 20);
             this.txtXacNhanMK.TabIndex = 7;
@@ -172,7 +170,7 @@
             this.lblSoDienThoai.AutoSize = true;
             this.lblSoDienThoai.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSoDienThoai.ForeColor = System.Drawing.Color.Black;
-            this.lblSoDienThoai.Location = new System.Drawing.Point(48, 250);
+            this.lblSoDienThoai.Location = new System.Drawing.Point(47, 200);
             this.lblSoDienThoai.Name = "lblSoDienThoai";
             this.lblSoDienThoai.Size = new System.Drawing.Size(99, 17);
             this.lblSoDienThoai.TabIndex = 13;
@@ -180,7 +178,7 @@
             // 
             // txtSoDienThoai
             // 
-            this.txtSoDienThoai.Location = new System.Drawing.Point(50, 270);
+            this.txtSoDienThoai.Location = new System.Drawing.Point(50, 220);
             this.txtSoDienThoai.Name = "txtSoDienThoai";
             this.txtSoDienThoai.Size = new System.Drawing.Size(300, 20);
             this.txtSoDienThoai.TabIndex = 3;
@@ -190,7 +188,7 @@
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.Black;
-            this.lblEmail.Location = new System.Drawing.Point(48, 200);
+            this.lblEmail.Location = new System.Drawing.Point(47, 150);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(46, 17);
             this.lblEmail.TabIndex = 12;
@@ -198,28 +196,17 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(50, 220);
+            this.txtEmail.Location = new System.Drawing.Point(50, 170);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(300, 20);
             this.txtEmail.TabIndex = 2;
-            // 
-            // lblNgaySinh
-            // 
-            this.lblNgaySinh.AutoSize = true;
-            this.lblNgaySinh.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNgaySinh.ForeColor = System.Drawing.Color.Black;
-            this.lblNgaySinh.Location = new System.Drawing.Point(48, 150);
-            this.lblNgaySinh.Name = "lblNgaySinh";
-            this.lblNgaySinh.Size = new System.Drawing.Size(75, 17);
-            this.lblNgaySinh.TabIndex = 11;
-            this.lblNgaySinh.Text = "Ngày Sinh:";
             // 
             // lblHoTen
             // 
             this.lblHoTen.AutoSize = true;
             this.lblHoTen.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHoTen.ForeColor = System.Drawing.Color.Black;
-            this.lblHoTen.Location = new System.Drawing.Point(48, 100);
+            this.lblHoTen.Location = new System.Drawing.Point(47, 100);
             this.lblHoTen.Name = "lblHoTen";
             this.lblHoTen.Size = new System.Drawing.Size(56, 17);
             this.lblHoTen.TabIndex = 10;
@@ -232,28 +219,14 @@
             this.txtHoTen.Size = new System.Drawing.Size(300, 20);
             this.txtHoTen.TabIndex = 0;
             // 
-            // NgaySinh
-            // 
-            this.NgaySinh.CalendarFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NgaySinh.CustomFormat = " dd/MM/yyyy";
-            this.NgaySinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.NgaySinh.Location = new System.Drawing.Point(50, 170);
-            this.NgaySinh.Name = "NgaySinh";
-            this.NgaySinh.Size = new System.Drawing.Size(300, 21);
-            this.NgaySinh.TabIndex = 1;
-            this.NgaySinh.Value = new System.DateTime(2005, 4, 20, 0, 0, 0, 0);
-            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(400, 580);
-            this.Controls.Add(this.NgaySinh);
+            this.ClientSize = new System.Drawing.Size(400, 550);
             this.Controls.Add(this.lblHoTen);
             this.Controls.Add(this.txtHoTen);
-            this.Controls.Add(this.lblNgaySinh);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblSoDienThoai);
@@ -298,10 +271,8 @@
         private System.Windows.Forms.TextBox txtSoDienThoai;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Label lblNgaySinh;
         private System.Windows.Forms.Label lblHoTen;
         private System.Windows.Forms.TextBox txtHoTen;
-        private System.Windows.Forms.DateTimePicker NgaySinh;
     }
 }
 

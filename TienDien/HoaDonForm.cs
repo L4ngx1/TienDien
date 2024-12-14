@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
 
 namespace TienDien
 {
@@ -34,10 +35,20 @@ namespace TienDien
 
         private void HoaDonForm_Load(object sender, EventArgs e)
         {
-
+            
+            Modify modify = new Modify();
+            string tentk = Login.CurrentUsername;
+            reportViewer1.LocalReport.ReportEmbeddedResource = "TienDien.Report1.rdlc";
+            ReportDataSource reportDataSource1 = new ReportDataSource();
+            ReportDataSource reportDataSource2 = new ReportDataSource();
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = modify.getHoaDon(tentk);
+            reportDataSource2.Name = "DataSet2";
+            reportDataSource2.Value = modify.getTaiKhoan(tentk);
+            reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.RefreshReport();
         }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();

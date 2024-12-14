@@ -34,13 +34,12 @@ namespace TienDien
         }
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            TaiKhoan tk = new TaiKhoan();
+            Modify modify = new Modify();
             string tentk=txtUsername.Text;
             string xacnhanMK = txtXacNhanMK.Text;
             string matkhau = txtPassword.Text;
             string email = txtEmail.Text;
             string hoten = txtHoTen.Text;
-            DateTime ngaysinh = NgaySinh.Value;
             string sdt = txtSoDienThoai.Text;
             string diachi = txtDiaChi.Text;
             if (email.Trim() == "") { MessageBox.Show("Vui lòng nhập Email!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
@@ -49,13 +48,13 @@ namespace TienDien
             else if (xacnhanMK != matkhau) { MessageBox.Show("Mật khẩu xác nhận không trùng!","Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             else if (hoten.Trim() == "") { MessageBox.Show("Vui lòng nhập họ tên!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             else if (diachi.Trim() == "") { MessageBox.Show("Vui lòng nhập địa chỉ!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-            else if (tk.TaiKhoans("Select * from TaiKhoan where Email = '" + email + "'").Count() != 0)
+            else if (modify.TaiKhoans("Select * from TaiKhoan where Email = '" + email + "'").Count() != 0)
             {
 
                 MessageBox.Show("Email này đã được đăng ký!", "Register", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            else if (tk.TaiKhoans("Select * from TaiKhoan where Email = '" + sdt + "'").Count() != 0)
+            else if (modify.TaiKhoans("Select * from TaiKhoan where Email = '" + sdt + "'").Count() != 0)
             {
 
                 MessageBox.Show("Số điện thoại này đã được đăng ký!", "Register", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -65,8 +64,8 @@ namespace TienDien
             {
                 try
                 {
-                    string query = "Insert into TaiKhoan values ('" + tentk + "','" + matkhau + "','" + email + "','" + hoten + "','" + ngaysinh + "','" + sdt + "','" + diachi + "')";
-                    tk.Command(query);
+                    string query = "Insert into TaiKhoan values ('" + tentk + "','" + matkhau + "','" + email + "','" + hoten + "','" + sdt + "','" + diachi + "')";
+                    modify.Command(query);
                     MessageBox.Show("Đăng ký thành công!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
