@@ -20,28 +20,32 @@ namespace TienDien
         {
             InitializeComponent();
         }
+        Modify modify = new Modify();
         public static string SelectedUsername { get; set; }
         private void btnXuatHoaDon_Click(object sender, EventArgs e)
         {
-            SelectedUsername = txtTentk.Text;
-            if (dataGridView1.SelectedRows.Count == 0 || dataGridView1.SelectedRows[0].Cells["TenTaiKhoan"].Value == null)
+            try
             {
-                MessageBox.Show("Vui lòng chọn một dòng hợp lệ để xuất hóa đơn.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                object check = modify.GetFieldValue("TenTaiKhoan", "HoaDon", "TenTaiKhoan", txtTentk.Text);
+                if (check == null)
+                {
+                    MessageBox.Show("Tên tài khoản không tồn tại trong hệ thống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    SelectedUsername = txtTentk.Text;
+                    HoaDonForm form = new HoaDonForm();
+                    form.ShowDialog();
+                }
             }
-            if (dataGridView1.SelectedRows[0].Cells["TenTaiKhoan"].Value.ToString() == txtTentk.Text)
+            catch (Exception ex)
             {
-                HoaDonForm form = new HoaDonForm();
-                form.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Tên tài khoản không khớp.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Lỗi!!" + ex.Message, "Lỗi!!");
             }
         }
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            Modify modify = new Modify();
             try
             {
                 if (txtTentk.Text.Trim() == "") { MessageBox.Show("Vui lòng nhập tên tài khoản!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); }
@@ -59,7 +63,6 @@ namespace TienDien
         {
             try
             {
-                Modify modify = new Modify();
                 object checkTrangThai = modify.GetFieldValue("TrangThai", "HoaDon", "TenTaiKhoan", txtTentk.Text);
                 if (checkTrangThai == null || checkTrangThai.ToString() == "")
                 {
@@ -83,7 +86,6 @@ namespace TienDien
         }
         private void TinhTienDien_Load(object sender, EventArgs e)
         {
-            Modify modify = new Modify();
             try
             {
                 dataGridView1.DataSource = modify.getHoaDon(txtTentk.Text);
