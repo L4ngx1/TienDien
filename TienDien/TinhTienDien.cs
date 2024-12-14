@@ -44,6 +44,7 @@ namespace TienDien
             Modify modify = new Modify();
             try
             {
+                if (txtTentk.Text.Trim() == "") { MessageBox.Show("Vui lòng nhập tên tài khoản!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                 string query = "Update HoaDon Set ThanhTien =  SoDien * 1000  where TenTaiKhoan = '" + txtTentk.Text + "'";
                 modify.Command(query);
                 dataGridView1.DataSource = modify.getHoaDon(txtTentk.Text);

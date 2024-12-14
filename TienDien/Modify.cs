@@ -49,6 +49,7 @@ namespace TienDien
                 {
                     fieldValue = null;
                 }
+                connection.Close();
             }
 
             return fieldValue;
