@@ -35,7 +35,7 @@ namespace TienDien
         private void btnRegister_Click(object sender, EventArgs e)
         {
             Register registerForm = new Register();
-            registerForm.Show();
+            registerForm.ShowDialog();
         }
         private void btnClose_Click(object sender, EventArgs e)
         {

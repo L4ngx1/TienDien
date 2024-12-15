@@ -111,5 +111,14 @@ namespace TienDien
         {
 
         }
+
+        private void txtTentk_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLoad.PerformClick();
+                e.SuppressKeyPress = true;
+            }
+        }
     }
 }
