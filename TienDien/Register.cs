@@ -42,22 +42,23 @@ namespace TienDien
             string hoten = txtHoTen.Text;
             string sdt = txtSoDienThoai.Text;
             string diachi = txtDiaChi.Text;
-            if (email.Trim() == "") { MessageBox.Show("Vui lòng nhập Email!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-            else if (tentk.Trim() == "") { MessageBox.Show("Vui lòng nhập tên tài khoản!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-            else if (matkhau.Trim() == "") { MessageBox.Show("Vui lòng nhập mật khẩu!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-            else if (xacnhanMK != matkhau) { MessageBox.Show("Mật khẩu xác nhận không trùng!","Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-            else if (hoten.Trim() == "") { MessageBox.Show("Vui lòng nhập họ tên!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-            else if (diachi.Trim() == "") { MessageBox.Show("Vui lòng nhập địa chỉ!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            if (hoten.Trim() == "") { MessageBox.Show("Vui lòng nhập họ tên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            else if (email.Trim() == "") { MessageBox.Show("Vui lòng nhập Email!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            else if (sdt.Trim() == "") { MessageBox.Show("Vui lòng nhập Số điện thoại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            else if (diachi.Trim() == "") { MessageBox.Show("Vui lòng nhập địa chỉ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            else if (tentk.Trim() == "") { MessageBox.Show("Vui lòng nhập tên tài khoản!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            else if (matkhau.Trim() == "") { MessageBox.Show("Vui lòng nhập mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            else if (xacnhanMK != matkhau) { MessageBox.Show("Mật khẩu xác nhận không trùng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             else if (modify.TaiKhoans("Select * from TaiKhoan where Email = '" + email + "'").Count() != 0)
             {
 
-                MessageBox.Show("Email này đã được đăng ký!", "Register", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Email này đã được đăng ký!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             else if (modify.TaiKhoans("Select * from TaiKhoan where Email = '" + sdt + "'").Count() != 0)
             {
 
-                MessageBox.Show("Số điện thoại này đã được đăng ký!", "Register", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Số điện thoại này đã được đăng ký!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             else
@@ -66,12 +67,12 @@ namespace TienDien
                 {
                     string query = "Insert into TaiKhoan values ('" + tentk + "','" + matkhau + "','" + email + "','" + hoten + "','" + sdt + "','" + diachi + "')";
                     modify.Command(query);
-                    MessageBox.Show("Đăng ký thành công!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Đăng ký thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
                 catch
                 {
-                    MessageBox.Show("Tên tài khoản này đã được đăng ký!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Tên tài khoản này đã được đăng ký!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
