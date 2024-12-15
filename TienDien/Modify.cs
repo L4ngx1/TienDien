@@ -78,10 +78,10 @@ namespace TienDien
             }
             return dt;
         }
-        public DataTable getTaiKhoan(string tentk)
+        public DataTable HoaDon(string mahoadon)
         {
             DataTable dt = new DataTable();
-            string query = "select * from TaiKhoan where TenTaiKhoan = '" + tentk + "'";
+            string query = "select * from HoaDon where MaHoaDon = '" + mahoadon + "'";
             using (SqlConnection sqlConnection = Connection.GetSqlConnection())
             {
                 sqlConnection.Open();
@@ -103,6 +103,7 @@ namespace TienDien
                 hd.TrangThai,
                 hd.ThanhTien,
                 tk.Email,
+                tk.HoTen,
                 tk.SoDienThoai,
                 tk.DiaChi
             FROM 

@@ -21,27 +21,32 @@ namespace TienDien
             InitializeComponent();
         }
         Modify modify = new Modify();
+        public static string SelectedMahoadon { get; set; }
         public static string SelectedUsername { get; set; }
         private void btnXuatHoaDon_Click(object sender, EventArgs e)
         {
             try
             {
-                object check = modify.GetFieldValue("TenTaiKhoan", "HoaDon", "TenTaiKhoan", txtTentk.Text);
-                if (check == null)
+                if (dataGridView1.SelectedRows.Count == 0)
                 {
-                    MessageBox.Show("Tên tài khoản không tồn tại trong hệ thống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Vui lòng chọn một dòng để xuất hóa đơn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                else
+                string tentk = dataGridView1.SelectedRows[0].Cells["TenTaiKhoan"].Value?.ToString();
+                string maHoaDon = dataGridView1.SelectedRows[0].Cells["MaHoaDon"].Value?.ToString();
+                if (string.IsNullOrEmpty(maHoaDon) && string.IsNullOrEmpty(tentk))
                 {
-                    SelectedUsername = txtTentk.Text;
-                    HoaDonForm form = new HoaDonForm();
-                    form.ShowDialog();
+                    MessageBox.Show("Dòng được chọn không hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
+                SelectedMahoadon = maHoaDon;
+                SelectedUsername = tentk;
+                HoaDonForm hoaDonForm = new HoaDonForm();
+                hoaDonForm.ShowDialog();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi!!" + ex.Message, "Lỗi!!");
+                MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void btnLoad_Click(object sender, EventArgs e)

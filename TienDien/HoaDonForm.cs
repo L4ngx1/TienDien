@@ -35,15 +35,16 @@ namespace TienDien
 
         private void HoaDonForm_Load(object sender, EventArgs e)
         {
+            string mahoadon = TinhTienDien.SelectedMahoadon;
             string tentk = TinhTienDien.SelectedUsername;
             Modify modify = new Modify();
             reportViewer1.LocalReport.ReportEmbeddedResource = "TienDien.Report1.rdlc";
             ReportDataSource reportDataSource1 = new ReportDataSource();
             ReportDataSource reportDataSource2 = new ReportDataSource();
             reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = modify.getHoaDon(tentk);
+            reportDataSource1.Value = modify.HoaDon(mahoadon);
             reportDataSource2.Name = "DataSet2";
-            reportDataSource2.Value = modify.getTaiKhoan(tentk);
+            reportDataSource2.Value = modify.HoaDon_TaiKhoan(tentk);
             reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.RefreshReport();
