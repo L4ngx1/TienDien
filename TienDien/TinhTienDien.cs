@@ -57,6 +57,11 @@ namespace TienDien
                 string query = "Update HoaDon Set ThanhTien =  SoDien * 1000  where TenTaiKhoan = '" + txtTentk.Text + "'";
                 modify.Command(query);
                 dataGridView1.DataSource = modify.getHoaDon(txtTentk.Text);
+                if (dataGridView1.Rows.Count > 0)
+                {
+                    dataGridView1.CurrentCell = dataGridView1.Rows[0].Cells[0];
+                    dataGridView1.Rows[0].Selected = true;
+                }
             }
             catch (Exception ex)
             {
