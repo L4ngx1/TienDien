@@ -114,7 +114,6 @@
     <Compile Include="HoaDonForm.Designer.cs">
       <DependentUpon>HoaDonForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="KhachHang.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -41,7 +41,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!ThanhTien.Value, "DataSet1")</Value>
+                <Value>=(Sum(Fields!ThanhTien.Value, "DataSet1")+Sum(Fields!ThanhTien.Value, "DataSet1")*8/100)</Value>
                 <Style>
                   <FontFamily>Segoe UI</FontFamily>
                   <FontSize>11pt</FontSize>
@@ -204,21 +204,24 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.66319in</Width>
+              <Width>1.41319in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.93931in</Width>
+              <Width>1.43014in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.32639in</Width>
+              <Width>0.72388in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.32167in</Width>
+              <Width>1.28in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.76042in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.31771in</Height>
+              <Height>0.40625in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -337,7 +340,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Thành Tiền(VND)</Value>
+                              <Value>Thành Tiền Chưa Thuế (VND)</Value>
                               <Style>
                                 <FontFamily>Segoe UI</FontFamily>
                                 <FontWeight>Bold</FontWeight>
@@ -364,10 +367,46 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Thuế GTGT</Value>
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox2</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.31771in</Height>
+              <Height>0.40625in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -505,12 +544,47 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox3">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>8%</Value>
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox3</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
               </TablixCells>
             </TablixRow>
           </TablixRows>
         </TablixBody>
         <TablixColumnHierarchy>
           <TablixMembers>
+            <TablixMember />
             <TablixMember />
             <TablixMember />
             <TablixMember />
@@ -528,10 +602,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>3.32167in</Top>
-        <Left>0.16889in</Left>
-        <Height>0.63542in</Height>
-        <Width>6.25056in</Width>
+        <Top>3.14459in</Top>
+        <Left>0.60639in</Left>
+        <Height>0.8125in</Height>
+        <Width>5.60763in</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
