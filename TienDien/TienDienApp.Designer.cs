@@ -104,9 +104,9 @@
             this.btnTienDien.Image = global::TienDien.Properties.Resources.lightning_bolt_23px;
             this.btnTienDien.Location = new System.Drawing.Point(0, 278);
             this.btnTienDien.Name = "btnTienDien";
-            this.btnTienDien.Size = new System.Drawing.Size(220, 87);
+            this.btnTienDien.Size = new System.Drawing.Size(220, 60);
             this.btnTienDien.TabIndex = 3;
-            this.btnTienDien.Text = "Thanh toán và hóa đơn";
+            this.btnTienDien.Text = "Thanh Toán\r\nvà Hóa Đơn";
             this.btnTienDien.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnTienDien.UseVisualStyleBackColor = false;
             this.btnTienDien.Click += new System.EventHandler(this.btnTienDien_Click);
@@ -211,7 +211,7 @@
             this.lblQuanLiTienDien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblQuanLiTienDien.Location = new System.Drawing.Point(3, 5);
             this.lblQuanLiTienDien.Name = "lblQuanLiTienDien";
-            this.lblQuanLiTienDien.Size = new System.Drawing.Size(262, 23);
+            this.lblQuanLiTienDien.Size = new System.Drawing.Size(206, 17);
             this.lblQuanLiTienDien.TabIndex = 7;
             this.lblQuanLiTienDien.Text = "       Hệ Thống Quản Lí Tiền Điện";
             // 
@@ -221,7 +221,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(785, 33);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(304, 30);
+            this.dateTimePicker1.Size = new System.Drawing.Size(304, 26);
             this.dateTimePicker1.TabIndex = 13;
             // 
             // uocTinh1
