@@ -126,7 +126,7 @@
             this.btnUocTinh.Name = "btnUocTinh";
             this.btnUocTinh.Size = new System.Drawing.Size(220, 60);
             this.btnUocTinh.TabIndex = 2;
-            this.btnUocTinh.Text = "Ước Tính   ";
+            this.btnUocTinh.Text = "Ước Tính \r\nĐiện Năng";
             this.btnUocTinh.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnUocTinh.UseVisualStyleBackColor = false;
             this.btnUocTinh.Click += new System.EventHandler(this.btnUocTinh_Click);
