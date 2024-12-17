@@ -53,6 +53,5 @@ namespace TienDien
         {
             this.Close();
         }
-
     }
 }
