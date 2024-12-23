@@ -133,6 +133,11 @@
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="Login_Register\TaiKhoan.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="TienDienApp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,11 +206,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -255,6 +255,16 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\light_40px1.png" />
+    <None Include="Resources\fan_40px.png" />
+    <None Include="Resources\microwave_40px.png" />
+    <None Include="Resources\tumble_dryer_40px.png" />
+    <None Include="Resources\water_heater_40px.png" />
+    <None Include="Resources\air_conditioner_40px.png" />
+    <None Include="Resources\dishwasher_40px.png" />
+    <None Include="Resources\Washing Machine_40px.png" />
+    <None Include="Resources\Fridge_40px.png" />
+    <None Include="Resources\electric_stovetop_40px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
