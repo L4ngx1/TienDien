@@ -403,24 +403,24 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.29028in</Width>
+              <Width>1.49349in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.09306in</Width>
+              <Width>0.65807in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.82222in</Width>
+              <Width>1.31569in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.36042in</Width>
+              <Width>1.65598in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.88125in</Width>
+              <Width>0.64792in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.25in</Height>
+              <Height>0.41667in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -449,6 +449,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -484,6 +485,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -501,7 +503,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Số Điện</Value>
+                              <Value>Số Điện Tiêu Thụ(kWh)</Value>
                               <Style>
                                 <FontFamily>Segoe UI</FontFamily>
                                 <FontWeight>Bold</FontWeight>
@@ -519,6 +521,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -536,7 +539,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Thành Tiền(VND)</Value>
+                              <Value>Thành Tiền Chưa Thuế(VND)</Value>
                               <Style>
                                 <FontFamily>Segoe UI</FontFamily>
                                 <FontWeight>Bold</FontWeight>
@@ -554,6 +557,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -589,6 +593,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -612,7 +617,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!TenTaiKhoan.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -644,7 +651,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!ThangHoaDon.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -676,7 +685,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!SoDien.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -708,7 +719,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!ThanhTien.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -740,7 +753,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>8%</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -786,10 +801,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>3.07167in</Top>
-        <Left>0.37722in</Left>
-        <Height>0.5in</Height>
-        <Width>5.44722in</Width>
+        <Top>2.94667in</Top>
+        <Left>0.24887in</Left>
+        <Height>0.66667in</Height>
+        <Width>5.77113in</Width>
         <ZIndex>12</ZIndex>
         <Style>
           <Border>
