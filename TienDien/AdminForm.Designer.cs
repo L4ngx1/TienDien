@@ -28,251 +28,294 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtSoDienThoai = new System.Windows.Forms.TextBox();
-            this.txtDiaChi = new System.Windows.Forms.TextBox();
-            this.txtHoTen = new System.Windows.Forms.TextBox();
-            this.lblSoDienThoai = new System.Windows.Forms.Label();
-            this.lblDiaChi = new System.Windows.Forms.Label();
-            this.lblHoTen = new System.Windows.Forms.Label();
-            this.lblMaKH = new System.Windows.Forms.Label();
-            this.txtMaKH = new System.Windows.Forms.TextBox();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupThongTinKH = new System.Windows.Forms.GroupBox();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.groupChucNang = new System.Windows.Forms.GroupBox();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnXuatHoaDon = new System.Windows.Forms.Button();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.groupTaiKhoan = new System.Windows.Forms.GroupBox();
+            this.lblSoDien = new System.Windows.Forms.Label();
+            this.lblTentk = new System.Windows.Forms.Label();
+            this.btnThongKe = new System.Windows.Forms.Button();
+            this.lblTongSoDien = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.numThang = new System.Windows.Forms.NumericUpDown();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnChuaThanhToan = new System.Windows.Forms.Button();
+            this.lblChuthich = new System.Windows.Forms.Label();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.lblMaHoaDon = new System.Windows.Forms.Label();
+            this.lblHoTen = new System.Windows.Forms.Label();
+            this.btnSignout = new System.Windows.Forms.Button();
             this.groupThongTinKH.SuspendLayout();
-            this.groupChucNang.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.groupTaiKhoan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numThang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtSoDienThoai
-            // 
-            this.txtSoDienThoai.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoDienThoai.Location = new System.Drawing.Point(167, 215);
-            this.txtSoDienThoai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtSoDienThoai.Name = "txtSoDienThoai";
-            this.txtSoDienThoai.Size = new System.Drawing.Size(533, 27);
-            this.txtSoDienThoai.TabIndex = 12;
-            // 
-            // txtDiaChi
-            // 
-            this.txtDiaChi.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiaChi.Location = new System.Drawing.Point(167, 160);
-            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(533, 27);
-            this.txtDiaChi.TabIndex = 11;
-            // 
-            // txtHoTen
-            // 
-            this.txtHoTen.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHoTen.Location = new System.Drawing.Point(167, 105);
-            this.txtHoTen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(533, 27);
-            this.txtHoTen.TabIndex = 10;
-            // 
-            // lblSoDienThoai
-            // 
-            this.lblSoDienThoai.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSoDienThoai.Location = new System.Drawing.Point(13, 215);
-            this.lblSoDienThoai.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblSoDienThoai.Name = "lblSoDienThoai";
-            this.lblSoDienThoai.Size = new System.Drawing.Size(147, 28);
-            this.lblSoDienThoai.TabIndex = 8;
-            this.lblSoDienThoai.Text = "Số Điện Thoại";
-            // 
-            // lblDiaChi
-            // 
-            this.lblDiaChi.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiaChi.Location = new System.Drawing.Point(13, 161);
-            this.lblDiaChi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblDiaChi.Name = "lblDiaChi";
-            this.lblDiaChi.Size = new System.Drawing.Size(147, 27);
-            this.lblDiaChi.TabIndex = 7;
-            this.lblDiaChi.Text = "Địa chỉ";
-            // 
-            // lblHoTen
-            // 
-            this.lblHoTen.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHoTen.Location = new System.Drawing.Point(13, 105);
-            this.lblHoTen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblHoTen.Name = "lblHoTen";
-            this.lblHoTen.Size = new System.Drawing.Size(145, 28);
-            this.lblHoTen.TabIndex = 6;
-            this.lblHoTen.Text = "Họ Tên";
-            // 
-            // lblMaKH
-            // 
-            this.lblMaKH.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaKH.Location = new System.Drawing.Point(13, 49);
-            this.lblMaKH.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblMaKH.Name = "lblMaKH";
-            this.lblMaKH.Size = new System.Drawing.Size(145, 28);
-            this.lblMaKH.TabIndex = 1;
-            this.lblMaKH.Text = "Mã KH";
-            // 
-            // txtMaKH
-            // 
-            this.txtMaKH.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaKH.Location = new System.Drawing.Point(167, 49);
-            this.txtMaKH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.Size = new System.Drawing.Size(532, 27);
-            this.txtMaKH.TabIndex = 0;
-            // 
             // groupThongTinKH
             // 
-            this.groupThongTinKH.Controls.Add(this.txtSoDienThoai);
-            this.groupThongTinKH.Controls.Add(this.txtDiaChi);
-            this.groupThongTinKH.Controls.Add(this.txtHoTen);
-            this.groupThongTinKH.Controls.Add(this.lblSoDienThoai);
-            this.groupThongTinKH.Controls.Add(this.lblDiaChi);
-            this.groupThongTinKH.Controls.Add(this.lblHoTen);
-            this.groupThongTinKH.Controls.Add(this.lblMaKH);
-            this.groupThongTinKH.Controls.Add(this.txtMaKH);
-            this.groupThongTinKH.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupThongTinKH.Location = new System.Drawing.Point(48, 57);
-            this.groupThongTinKH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupThongTinKH.Controls.Add(this.chart1);
+            this.groupThongTinKH.Controls.Add(this.groupTaiKhoan);
+            this.groupThongTinKH.Controls.Add(this.btnThongKe);
+            this.groupThongTinKH.Controls.Add(this.lblTongSoDien);
+            this.groupThongTinKH.Controls.Add(this.label1);
+            this.groupThongTinKH.Controls.Add(this.numThang);
+            this.groupThongTinKH.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupThongTinKH.Location = new System.Drawing.Point(36, 34);
             this.groupThongTinKH.Name = "groupThongTinKH";
-            this.groupThongTinKH.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupThongTinKH.Size = new System.Drawing.Size(733, 263);
+            this.groupThongTinKH.Size = new System.Drawing.Size(1010, 274);
             this.groupThongTinKH.TabIndex = 24;
             this.groupThongTinKH.TabStop = false;
-            this.groupThongTinKH.Text = "Thông Tin Khách Hàng";
+            this.groupThongTinKH.Text = "Thống Kê Lượng Điện Tiêu Thụ";
             // 
-            // btnDelete
+            // chart1
             // 
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(13, 178);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(240, 62);
-            this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "Xóa";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
+            this.chart1.Location = new System.Drawing.Point(460, 28);
+            this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Số Điện";
+            this.chart1.Series.Add(series3);
+            this.chart1.Size = new System.Drawing.Size(526, 224);
+            this.chart1.TabIndex = 33;
+            this.chart1.Text = "chart1";
             // 
-            // btnEdit
+            // groupTaiKhoan
             // 
-            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(13, 105);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(240, 62);
-            this.btnEdit.TabIndex = 1;
-            this.btnEdit.Text = "Sửa";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.groupTaiKhoan.Controls.Add(this.lblHoTen);
+            this.groupTaiKhoan.Controls.Add(this.lblMaHoaDon);
+            this.groupTaiKhoan.Controls.Add(this.lblSoDien);
+            this.groupTaiKhoan.Controls.Add(this.lblTentk);
+            this.groupTaiKhoan.Location = new System.Drawing.Point(42, 69);
+            this.groupTaiKhoan.Name = "groupTaiKhoan";
+            this.groupTaiKhoan.Size = new System.Drawing.Size(398, 130);
+            this.groupTaiKhoan.TabIndex = 32;
+            this.groupTaiKhoan.TabStop = false;
+            this.groupTaiKhoan.Text = "Hóa Đơn có số điện tiêu thụ lớn nhất";
             // 
-            // groupChucNang
+            // lblSoDien
             // 
-            this.groupChucNang.Controls.Add(this.btnDelete);
-            this.groupChucNang.Controls.Add(this.btnEdit);
-            this.groupChucNang.Controls.Add(this.btnAdd);
-            this.groupChucNang.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupChucNang.Location = new System.Drawing.Point(848, 57);
-            this.groupChucNang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupChucNang.Name = "groupChucNang";
-            this.groupChucNang.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupChucNang.Size = new System.Drawing.Size(267, 263);
-            this.groupChucNang.TabIndex = 23;
-            this.groupChucNang.TabStop = false;
-            this.groupChucNang.Text = "Chức Năng";
+            this.lblSoDien.AutoSize = true;
+            this.lblSoDien.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoDien.Location = new System.Drawing.Point(21, 90);
+            this.lblSoDien.Name = "lblSoDien";
+            this.lblSoDien.Size = new System.Drawing.Size(116, 20);
+            this.lblSoDien.TabIndex = 37;
+            this.lblSoDien.Text = "Số điện tiêu thụ:";
             // 
-            // btnAdd
+            // lblTentk
             // 
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(13, 31);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(240, 62);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Thêm";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.lblTentk.AutoSize = true;
+            this.lblTentk.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTentk.Location = new System.Drawing.Point(21, 50);
+            this.lblTentk.Name = "lblTentk";
+            this.lblTentk.Size = new System.Drawing.Size(100, 20);
+            this.lblTentk.TabIndex = 33;
+            this.lblTentk.Text = "Tên tài khoản:";
             // 
-            // button1
+            // btnThongKe
             // 
-            this.button1.BackColor = System.Drawing.Color.Navy;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(247, 686);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(191, 37);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Thanh toán";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnThongKe.AutoSize = true;
+            this.btnThongKe.BackColor = System.Drawing.Color.Navy;
+            this.btnThongKe.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThongKe.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThongKe.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThongKe.ForeColor = System.Drawing.Color.White;
+            this.btnThongKe.Location = new System.Drawing.Point(293, 36);
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.Size = new System.Drawing.Size(92, 29);
+            this.btnThongKe.TabIndex = 28;
+            this.btnThongKe.Text = "Thống kê";
+            this.btnThongKe.UseVisualStyleBackColor = false;
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
-            // btnXuatHoaDon
+            // lblTongSoDien
             // 
-            this.btnXuatHoaDon.BackColor = System.Drawing.Color.Navy;
-            this.btnXuatHoaDon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnXuatHoaDon.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnXuatHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXuatHoaDon.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXuatHoaDon.ForeColor = System.Drawing.Color.White;
-            this.btnXuatHoaDon.Location = new System.Drawing.Point(48, 686);
-            this.btnXuatHoaDon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnXuatHoaDon.Name = "btnXuatHoaDon";
-            this.btnXuatHoaDon.Size = new System.Drawing.Size(191, 37);
-            this.btnXuatHoaDon.TabIndex = 20;
-            this.btnXuatHoaDon.Text = "Xuất hóa đơn";
-            this.btnXuatHoaDon.UseVisualStyleBackColor = false;
+            this.lblTongSoDien.AutoSize = true;
+            this.lblTongSoDien.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTongSoDien.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblTongSoDien.Location = new System.Drawing.Point(6, 246);
+            this.lblTongSoDien.Name = "lblTongSoDien";
+            this.lblTongSoDien.Size = new System.Drawing.Size(322, 25);
+            this.lblTongSoDien.TabIndex = 2;
+            this.lblTongSoDien.Text = "Tổng số điện tiêu thụ trong tháng 0:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(38, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(177, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Chọn tháng cần thống kê:\r\n";
+            // 
+            // numThang
+            // 
+            this.numThang.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numThang.Location = new System.Drawing.Point(221, 38);
+            this.numThang.Maximum = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            this.numThang.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numThang.Name = "numThang";
+            this.numThang.Size = new System.Drawing.Size(66, 25);
+            this.numThang.TabIndex = 0;
+            this.numThang.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(48, 368);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(36, 326);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1067, 283);
+            this.dataGridView1.Size = new System.Drawing.Size(1010, 224);
             this.dataGridView1.TabIndex = 22;
+            // 
+            // btnChuaThanhToan
+            // 
+            this.btnChuaThanhToan.BackColor = System.Drawing.Color.Navy;
+            this.btnChuaThanhToan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChuaThanhToan.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnChuaThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChuaThanhToan.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChuaThanhToan.ForeColor = System.Drawing.Color.White;
+            this.btnChuaThanhToan.Location = new System.Drawing.Point(36, 556);
+            this.btnChuaThanhToan.Name = "btnChuaThanhToan";
+            this.btnChuaThanhToan.Size = new System.Drawing.Size(385, 40);
+            this.btnChuaThanhToan.TabIndex = 26;
+            this.btnChuaThanhToan.Text = "Hiển thị thông tin tài khoản chưa thanh toán";
+            this.btnChuaThanhToan.UseVisualStyleBackColor = false;
+            this.btnChuaThanhToan.Click += new System.EventHandler(this.btnChuaThanhToan_Click);
+            // 
+            // lblChuthich
+            // 
+            this.lblChuthich.AutoSize = true;
+            this.lblChuthich.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChuthich.Location = new System.Drawing.Point(688, 553);
+            this.lblChuthich.Name = "lblChuthich";
+            this.lblChuthich.Size = new System.Drawing.Size(358, 17);
+            this.lblChuthich.TabIndex = 27;
+            this.lblChuthich.Text = "Chú thích trạng thái: 1-Đã thanh toán  0-Chưa thanh toán";
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.Navy;
+            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.Location = new System.Drawing.Point(427, 556);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(152, 40);
+            this.btnRefresh.TabIndex = 28;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // lblMaHoaDon
+            // 
+            this.lblMaHoaDon.AutoSize = true;
+            this.lblMaHoaDon.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaHoaDon.Location = new System.Drawing.Point(21, 30);
+            this.lblMaHoaDon.Name = "lblMaHoaDon";
+            this.lblMaHoaDon.Size = new System.Drawing.Size(92, 20);
+            this.lblMaHoaDon.TabIndex = 38;
+            this.lblMaHoaDon.Text = "Mã hóa đơn:";
+            // 
+            // lblHoTen
+            // 
+            this.lblHoTen.AutoSize = true;
+            this.lblHoTen.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHoTen.Location = new System.Drawing.Point(21, 70);
+            this.lblHoTen.Name = "lblHoTen";
+            this.lblHoTen.Size = new System.Drawing.Size(57, 20);
+            this.lblHoTen.TabIndex = 39;
+            this.lblHoTen.Text = "Họ tên:";
+            // 
+            // btnSignout
+            // 
+            this.btnSignout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSignout.FlatAppearance.BorderSize = 0;
+            this.btnSignout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSignout.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignout.ForeColor = System.Drawing.Color.Navy;
+            this.btnSignout.Image = global::TienDien.Properties.Resources.shutdown_25px;
+            this.btnSignout.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSignout.Location = new System.Drawing.Point(864, 611);
+            this.btnSignout.Name = "btnSignout";
+            this.btnSignout.Size = new System.Drawing.Size(220, 50);
+            this.btnSignout.TabIndex = 34;
+            this.btnSignout.Text = "Đăng Xuất";
+            this.btnSignout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSignout.UseVisualStyleBackColor = true;
+            this.btnSignout.Click += new System.EventHandler(this.btnSignout_Click);
             // 
             // AdminForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1445, 814);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1084, 661);
+            this.Controls.Add(this.btnSignout);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.lblChuthich);
+            this.Controls.Add(this.btnChuaThanhToan);
             this.Controls.Add(this.groupThongTinKH);
-            this.Controls.Add(this.groupChucNang);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnXuatHoaDon);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AdminForm";
-            this.Text = "AdminForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "ADMIN";
+            this.Load += new System.EventHandler(this.AdminForm_Load);
             this.groupThongTinKH.ResumeLayout(false);
             this.groupThongTinKH.PerformLayout();
-            this.groupChucNang.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.groupTaiKhoan.ResumeLayout(false);
+            this.groupTaiKhoan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numThang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtSoDienThoai;
-        private System.Windows.Forms.TextBox txtDiaChi;
-        private System.Windows.Forms.TextBox txtHoTen;
-        private System.Windows.Forms.Label lblSoDienThoai;
-        private System.Windows.Forms.Label lblDiaChi;
-        private System.Windows.Forms.Label lblHoTen;
-        private System.Windows.Forms.Label lblMaKH;
-        private System.Windows.Forms.TextBox txtMaKH;
         private System.Windows.Forms.GroupBox groupThongTinKH;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.GroupBox groupChucNang;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnXuatHoaDon;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnChuaThanhToan;
+        private System.Windows.Forms.Label lblTongSoDien;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown numThang;
+        private System.Windows.Forms.Button btnThongKe;
+        private System.Windows.Forms.GroupBox groupTaiKhoan;
+        private System.Windows.Forms.Label lblTentk;
+        private System.Windows.Forms.Label lblSoDien;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Label lblChuthich;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Label lblMaHoaDon;
+        private System.Windows.Forms.Label lblHoTen;
+        private System.Windows.Forms.Button btnSignout;
     }
 }
