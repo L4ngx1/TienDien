@@ -21,7 +21,7 @@ namespace TienDien
         }
         public object SoDienThang(int thang)
         {
-            string query1 = $@"SELECT TOP 1 SoDien FROM HoaDon WHERE ThangHoaDon = {thang} ORDER BY SoDien DESC";
+            string query1 = $@"SELECT SUM(SoDien) FROM HoaDon WHERE ThangHoaDon = {thang}";
             object sodien = modify.CmdGet(query1);
             return sodien;
         }
@@ -71,7 +71,7 @@ namespace TienDien
                 lblHoTen.Text = $"Họ tên: {hoten}";
                 string query = $@"SELECT SUM(SoDien) FROM HoaDon WHERE ThangHoaDon = {thanghoadon}";
                 object TongSoDien = modify.CmdGet(query);
-                lblTongSoDien.Text = $"Tổng số lượng điện tiêu thụ tháng {thanghoadon}: {TongSoDien} kWh";
+                lblTongSoDien.Text = $"Tổng số điện tiêu thụ trong tháng {thanghoadon}: {TongSoDien} kWh";
             }
             catch (Exception ex)
             {
