@@ -34,7 +34,7 @@ namespace TienDien
                 }
                 string tentk = dataGridView1.SelectedRows[0].Cells["TenTaiKhoan"].Value?.ToString();
                 string maHoaDon = dataGridView1.SelectedRows[0].Cells["MaHoaDon"].Value?.ToString();
-                if (string.IsNullOrEmpty(maHoaDon) && string.IsNullOrEmpty(tentk))
+                if (string.IsNullOrEmpty(maHoaDon))
                 {
                     MessageBox.Show("Dòng được chọn không hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -72,7 +72,18 @@ namespace TienDien
         {
             try
             {
-                object checkTrangThai = modify.GetFieldValue("TrangThai", "HoaDon", "TenTaiKhoan", txtTentk.Text);
+                string maHoaDon = dataGridView1.SelectedRows[0].Cells["MaHoaDon"].Value?.ToString();
+                if (dataGridView1.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Vui lòng chọn một dòng để xuất hóa đơn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (string.IsNullOrEmpty(maHoaDon))
+                {
+                    MessageBox.Show("Dòng được chọn không hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                object checkTrangThai = modify.GetFieldValue("TrangThai", "HoaDon", "MaHoaDon", maHoaDon);
                 if (checkTrangThai == null || checkTrangThai.ToString() == "")
                 {
                     MessageBox.Show("Không tìm thấy hóa đơn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -83,8 +94,7 @@ namespace TienDien
                     MessageBox.Show("Hóa đơn đã được thanh toán.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
-
-                string query = "UPDATE HoaDon SET TrangThai = 1 WHERE TenTaiKhoan = '" + txtTentk.Text + "'";
+                string query = "UPDATE HoaDon SET TrangThai = 1 WHERE MaHoaDon = '" + maHoaDon + "'";
                 modify.Command(query);
                 MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 TinhTienDien_Load(sender, e);

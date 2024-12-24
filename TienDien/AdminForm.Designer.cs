@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupThongTinKH = new System.Windows.Forms.GroupBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupTaiKhoan = new System.Windows.Forms.GroupBox();
@@ -72,17 +72,17 @@
             // 
             // chart1
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(460, 28);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Số Điện";
-            this.chart1.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Số Điện";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(526, 224);
             this.chart1.TabIndex = 33;
             this.chart1.Text = "chart1";
@@ -202,7 +202,7 @@
             this.btnChuaThanhToan.Name = "btnChuaThanhToan";
             this.btnChuaThanhToan.Size = new System.Drawing.Size(385, 40);
             this.btnChuaThanhToan.TabIndex = 26;
-            this.btnChuaThanhToan.Text = "Hiển thị thông tin tài khoản chưa thanh toán";
+            this.btnChuaThanhToan.Text = "Hiển thị thông tin hóa đơn chưa thanh toán";
             this.btnChuaThanhToan.UseVisualStyleBackColor = false;
             this.btnChuaThanhToan.Click += new System.EventHandler(this.btnChuaThanhToan_Click);
             // 
@@ -261,9 +261,9 @@
             this.btnSignout.ForeColor = System.Drawing.Color.Navy;
             this.btnSignout.Image = global::TienDien.Properties.Resources.shutdown_25px;
             this.btnSignout.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSignout.Location = new System.Drawing.Point(864, 611);
+            this.btnSignout.Location = new System.Drawing.Point(1, 625);
             this.btnSignout.Name = "btnSignout";
-            this.btnSignout.Size = new System.Drawing.Size(220, 50);
+            this.btnSignout.Size = new System.Drawing.Size(1083, 36);
             this.btnSignout.TabIndex = 34;
             this.btnSignout.Text = "Đăng Xuất";
             this.btnSignout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
