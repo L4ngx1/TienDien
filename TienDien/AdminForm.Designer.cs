@@ -28,9 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupThongTinKH = new System.Windows.Forms.GroupBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupTaiKhoan = new System.Windows.Forms.GroupBox();
@@ -64,9 +68,9 @@
             this.groupThongTinKH.Controls.Add(this.numThang);
             this.groupThongTinKH.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupThongTinKH.Location = new System.Drawing.Point(48, 42);
-            this.groupThongTinKH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupThongTinKH.Margin = new System.Windows.Forms.Padding(4);
             this.groupThongTinKH.Name = "groupThongTinKH";
-            this.groupThongTinKH.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupThongTinKH.Padding = new System.Windows.Forms.Padding(4);
             this.groupThongTinKH.Size = new System.Drawing.Size(1347, 337);
             this.groupThongTinKH.TabIndex = 24;
             this.groupThongTinKH.TabStop = false;
@@ -74,18 +78,18 @@
             // 
             // chart1
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chart1.Legends.Add(legend6);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(613, 34);
-            this.chart1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chart1.Margin = new System.Windows.Forms.Padding(4);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Số Điện";
-            this.chart1.Series.Add(series6);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Số Điện";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(701, 276);
             this.chart1.TabIndex = 33;
             this.chart1.Text = "chart1";
@@ -97,9 +101,9 @@
             this.groupTaiKhoan.Controls.Add(this.lblSoDien);
             this.groupTaiKhoan.Controls.Add(this.lblTentk);
             this.groupTaiKhoan.Location = new System.Drawing.Point(56, 85);
-            this.groupTaiKhoan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupTaiKhoan.Margin = new System.Windows.Forms.Padding(4);
             this.groupTaiKhoan.Name = "groupTaiKhoan";
-            this.groupTaiKhoan.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupTaiKhoan.Padding = new System.Windows.Forms.Padding(4);
             this.groupTaiKhoan.Size = new System.Drawing.Size(531, 160);
             this.groupTaiKhoan.TabIndex = 32;
             this.groupTaiKhoan.TabStop = false;
@@ -159,7 +163,7 @@
             this.btnThongKe.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThongKe.ForeColor = System.Drawing.Color.White;
             this.btnThongKe.Location = new System.Drawing.Point(391, 44);
-            this.btnThongKe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThongKe.Margin = new System.Windows.Forms.Padding(4);
             this.btnThongKe.Name = "btnThongKe";
             this.btnThongKe.Size = new System.Drawing.Size(188, 35);
             this.btnThongKe.TabIndex = 28;
@@ -194,7 +198,7 @@
             // 
             this.numThang.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numThang.Location = new System.Drawing.Point(295, 47);
-            this.numThang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numThang.Margin = new System.Windows.Forms.Padding(4);
             this.numThang.Maximum = new decimal(new int[] {
             12,
             0,
@@ -216,11 +220,41 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Location = new System.Drawing.Point(48, 401);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.Size = new System.Drawing.Size(1347, 276);
             this.dataGridView1.TabIndex = 22;
             // 
@@ -233,7 +267,7 @@
             this.btnChuaThanhToan.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChuaThanhToan.ForeColor = System.Drawing.Color.White;
             this.btnChuaThanhToan.Location = new System.Drawing.Point(48, 684);
-            this.btnChuaThanhToan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnChuaThanhToan.Margin = new System.Windows.Forms.Padding(4);
             this.btnChuaThanhToan.Name = "btnChuaThanhToan";
             this.btnChuaThanhToan.Size = new System.Drawing.Size(513, 49);
             this.btnChuaThanhToan.TabIndex = 26;
@@ -261,7 +295,7 @@
             this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.ForeColor = System.Drawing.Color.White;
             this.btnRefresh.Location = new System.Drawing.Point(569, 684);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(203, 49);
             this.btnRefresh.TabIndex = 28;
@@ -276,10 +310,9 @@
             this.btnSignout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignout.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignout.ForeColor = System.Drawing.Color.Navy;
-            this.btnSignout.Image = global::TienDien.Properties.Resources.shutdown_25px;
             this.btnSignout.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSignout.Location = new System.Drawing.Point(1, 769);
-            this.btnSignout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSignout.Margin = new System.Windows.Forms.Padding(4);
             this.btnSignout.Name = "btnSignout";
             this.btnSignout.Size = new System.Drawing.Size(1444, 44);
             this.btnSignout.TabIndex = 34;
