@@ -167,23 +167,11 @@ namespace TienDien
         {
             DataTable dt = new DataTable();
             string query = @"
-            SELECT 
-                hd.MaHoaDon,
-                hd.TenTaiKhoan,
-                tk.HoTen,
-                tk.SoDienThoai,
-                tk.Email,
-                tk.DiaChi,
-                hd.ThangHoaDon,
-                hd.TrangThai,
-                hd.SoDien,
-                hd.ThanhTien
-            FROM 
-                HoaDon hd
-            INNER JOIN 
-                TaiKhoan tk ON hd.TenTaiKhoan = tk.TenTaiKhoan
-            WHERE
-                hd.TrangThai = 0
+            SELECT DISTINCT TaiKhoan.TenTaiKhoan,TaiKhoan.Email,TaiKhoan.HoTen,TaiKhoan.SoDienThoai, TaiKhoan.DiaChi
+            FROM TaiKhoan
+            JOIN HoaDon ON TaiKhoan.TenTaiKhoan = HoaDon.TenTaiKhoan
+            WHERE TrangThai = 0;
+
             ";
             using (SqlConnection sqlConnection = Connection.GetSqlConnection())
             {

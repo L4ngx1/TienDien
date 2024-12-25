@@ -60,15 +60,19 @@ namespace TienDien
                 string query1 = $@"SELECT TOP 1 tk.TenTaiKhoan FROM HoaDon hd INNER JOIN TaiKhoan tk ON hd.TenTaiKhoan = tk.TenTaiKhoan WHERE ThangHoaDon = {thanghoadon} ORDER BY SoDien DESC";
                 object tentk = modify.CmdGet(query1);
                 lblTentk.Text = $"Tên tài khoản: {tentk}";
+
                 string query2 = $@"SELECT TOP 1 hd.MaHoaDon FROM HoaDon hd INNER JOIN TaiKhoan tk ON hd.TenTaiKhoan = tk.TenTaiKhoan WHERE ThangHoaDon = {thanghoadon} ORDER BY SoDien DESC";
                 object mahoadon = modify.CmdGet(query2);
                 lblMaHoaDon.Text = $"Mã hóa đơn: {mahoadon}";
+
                 string query3 = $@"SELECT TOP 1 hd.SoDien FROM HoaDon hd INNER JOIN TaiKhoan tk ON hd.TenTaiKhoan = tk.TenTaiKhoan WHERE ThangHoaDon = {thanghoadon} ORDER BY SoDien DESC";
                 object sodien = modify.CmdGet(query3);
                 lblSoDien.Text = $"Số điện tiêu thụ: {sodien} kWh";
+
                 string query4 = $@"SELECT TOP 1 tk.HoTen FROM HoaDon hd INNER JOIN TaiKhoan tk ON hd.TenTaiKhoan = tk.TenTaiKhoan WHERE ThangHoaDon = {thanghoadon} ORDER BY SoDien DESC";
                 object hoten = modify.CmdGet(query4);
                 lblHoTen.Text = $"Họ tên: {hoten}";
+
                 string query = $@"SELECT SUM(SoDien) FROM HoaDon WHERE ThangHoaDon = {thanghoadon}";
                 object TongSoDien = modify.CmdGet(query);
                 lblTongSoDien.Text = $"Tổng số điện tiêu thụ trong tháng {thanghoadon}: {TongSoDien} kWh";
