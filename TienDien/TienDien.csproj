@@ -88,11 +88,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminForm.cs">
+    <Compile Include="Admin\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminForm.Designer.cs">
+    <Compile Include="Admin\AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserCtrlQuanLyHD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\UserCtrlQuanLyHD.Designer.cs">
+      <DependentUpon>UserCtrlQuanLyHD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserCtrlQuanLyTK.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\UserCtrlQuanLyTK.Designer.cs">
+      <DependentUpon>UserCtrlQuanLyTK.cs</DependentUpon>
     </Compile>
     <Compile Include="Connection.cs" />
     <Compile Include="Dashboard.cs">
@@ -158,8 +170,14 @@
     <Compile Include="UocTinhDienNang\UocTinh.Designer.cs">
       <DependentUpon>UocTinh.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AdminForm.resx">
+    <EmbeddedResource Include="Admin\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UserCtrlQuanLyHD.resx">
+      <DependentUpon>UserCtrlQuanLyHD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UserCtrlQuanLyTK.resx">
+      <DependentUpon>UserCtrlQuanLyTK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
@@ -256,6 +274,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\test_account_23px.png" />
     <None Include="Resources\light_40px1.png" />
     <None Include="Resources\fan_40px.png" />
     <None Include="Resources\microwave_40px.png" />

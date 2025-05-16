@@ -163,6 +163,29 @@ namespace TienDien
             }
             return dt;
         }
+        public DataTable getTaiKhoan_ADMIN()
+        {
+            DataTable dt = new DataTable();
+            string query = @"
+            SELECT 
+                tk.TenTaiKhoan,
+                tk.MatKhau,
+                tk.HoTen,
+                tk.Email,
+                tk.SoDienThoai,
+                tk.DiaChi
+            FROM 
+                TaiKhoan tk
+            ";
+            using (SqlConnection sqlConnection = Connection.GetSqlConnection())
+            {
+                sqlConnection.Open();
+                dataAdapter = new SqlDataAdapter(query, sqlConnection);
+                dataAdapter.Fill(dt);
+                sqlConnection.Close();
+            }
+            return dt;
+        }
         public DataTable ChuaThanhToan_ADMIN()
         {
             DataTable dt = new DataTable();
@@ -181,6 +204,192 @@ namespace TienDien
                 sqlConnection.Close();
             }
             return dt;
+        }
+        public void addAccount(string tentk, string matkhau, string email, string hoten, string sdt, string diachi)
+        {
+            Modify modify = new Modify();
+            if (hoten.Trim() == "") { MessageBox.Show("Vui lòng nhập họ tên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            else if (email.Trim() == "") { MessageBox.Show("Vui lòng nhập Email!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            else if (sdt.Trim() == "") { MessageBox.Show("Vui lòng nhập Số điện thoại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+
+            else if (diachi.Trim() == "") { MessageBox.Show("Vui lòng nhập địa chỉ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            else if (tentk.Trim() == "") { MessageBox.Show("Vui lòng nhập tên tài khoản!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            else if (matkhau.Trim() == "") { MessageBox.Show("Vui lòng nhập mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            else if (modify.TaiKhoans("Select * from TaiKhoan where Email = '" + email + "'").Count() != 0)
+            {
+
+                MessageBox.Show("Email này đã được đăng ký!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else
+            {
+                try
+                {
+                    string query = "Insert into TaiKhoan values ('" + tentk + "','" + matkhau + "','" + email + "','" + hoten + "','" + sdt + "','" + diachi + "')";
+                    modify.Command(query);
+                    MessageBox.Show("Đăng ký thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch
+                {
+                    MessageBox.Show("Tên tài khoản này đã được đăng ký!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+        public void editAccount(string oldTenTaiKhoan, string newTenTaiKhoan, string matkhau, string email, string hoten, string sdt, string diachi)
+        {
+            if (hoten.Trim() == "")
+            {
+                MessageBox.Show("Vui lòng nhập họ tên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (email.Trim() == "")
+            {
+                MessageBox.Show("Vui lòng nhập Email!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (sdt.Trim() == "")
+            {
+                MessageBox.Show("Vui lòng nhập Số điện thoại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (diachi.Trim() == "")
+            {
+                MessageBox.Show("Vui lòng nhập địa chỉ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (newTenTaiKhoan.Trim() == "")
+            {
+                MessageBox.Show("Vui lòng nhập tên tài khoản!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (matkhau.Trim() == "")
+            {
+                MessageBox.Show("Vui lòng nhập mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            using (SqlConnection conn = Connection.GetSqlConnection())
+            {
+                conn.Open();
+
+                // Kiểm tra trùng tên tài khoản nếu đổi tên
+                if (!string.Equals(oldTenTaiKhoan, newTenTaiKhoan, StringComparison.OrdinalIgnoreCase))
+                {
+                    string checkUsernameQuery = "SELECT COUNT(*) FROM TaiKhoan WHERE TenTaiKhoan = @NewTenTaiKhoan";
+                    using (SqlCommand cmd = new SqlCommand(checkUsernameQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@NewTenTaiKhoan", newTenTaiKhoan);
+                        int count = (int)cmd.ExecuteScalar();
+                        if (count > 0)
+                        {
+                            MessageBox.Show("Tên tài khoản này đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
+                    }
+                }
+
+                string checkEmailQuery = "SELECT COUNT(*) FROM TaiKhoan WHERE Email = @Email AND TenTaiKhoan <> @OldTenTaiKhoan";
+                using (SqlCommand cmd = new SqlCommand(checkEmailQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Email", email);
+                    cmd.Parameters.AddWithValue("@OldTenTaiKhoan", oldTenTaiKhoan);
+                    int count = (int)cmd.ExecuteScalar();
+                    if (count > 0)
+                    {
+                        MessageBox.Show("Email này đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                }
+
+                string updateQuery = @"UPDATE TaiKhoan 
+                                       SET 
+                                        TenTaiKhoan = @NewTenTaiKhoan,
+                                        MatKhau = @MatKhau, 
+                                        Email = @Email, 
+                                        HoTen = @HoTen, 
+                                        SoDienThoai = @SoDienThoai, 
+                                        DiaChi = @DiaChi 
+                                       WHERE TenTaiKhoan = @OldTenTaiKhoan";
+                try
+                {
+                    using (SqlCommand cmd = new SqlCommand(updateQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@NewTenTaiKhoan", newTenTaiKhoan);
+                        cmd.Parameters.AddWithValue("@MatKhau", matkhau);
+                        cmd.Parameters.AddWithValue("@Email", email);
+                        cmd.Parameters.AddWithValue("@HoTen", hoten);
+                        cmd.Parameters.AddWithValue("@SoDienThoai", sdt);
+                        cmd.Parameters.AddWithValue("@DiaChi", diachi);
+                        cmd.Parameters.AddWithValue("@OldTenTaiKhoan", oldTenTaiKhoan);
+                        int rows = cmd.ExecuteNonQuery();
+                        if (rows > 0)
+                        {
+                            MessageBox.Show("Sửa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy tài khoản để sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Có lỗi xảy ra khi sửa tài khoản!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                conn.Close();
+            }
+        }
+
+        public void deleteAccount(string tenTaiKhoan)
+        {
+            if (string.IsNullOrWhiteSpace(tenTaiKhoan))
+            {
+                MessageBox.Show("Tên tài khoản trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa tài khoản '{tenTaiKhoan}' không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result != DialogResult.Yes) return;
+
+            using (SqlConnection conn = Connection.GetSqlConnection())
+            {
+                try
+                {
+                    conn.Open();
+
+                    // Xóa các hóa đơn liên quan trước
+                    string deleteHoaDonQuery = "DELETE FROM HoaDon WHERE TenTaiKhoan = @TenTaiKhoan";
+                    using (SqlCommand cmdHoaDon = new SqlCommand(deleteHoaDonQuery, conn))
+                    {
+                        cmdHoaDon.Parameters.AddWithValue("@TenTaiKhoan", tenTaiKhoan);
+                        cmdHoaDon.ExecuteNonQuery();
+                    }
+
+                    // Sau đó xóa tài khoản
+                    string deleteTaiKhoanQuery = "DELETE FROM TaiKhoan WHERE TenTaiKhoan = @TenTaiKhoan";
+                    using (SqlCommand cmdTaiKhoan = new SqlCommand(deleteTaiKhoanQuery, conn))
+                    {
+                        cmdTaiKhoan.Parameters.AddWithValue("@TenTaiKhoan", tenTaiKhoan);
+                        int rows = cmdTaiKhoan.ExecuteNonQuery();
+                        if (rows > 0)
+                        {
+                            MessageBox.Show("Xóa tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy tài khoản để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Có lỗi xảy ra khi xóa tài khoản!\n" + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
         }
     }
 }

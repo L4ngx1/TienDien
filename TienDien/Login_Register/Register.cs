@@ -35,48 +35,24 @@ namespace TienDien
         private void btnRegister_Click(object sender, EventArgs e)
         {
             Modify modify = new Modify();
-            string tentk=txtUsername.Text;
+            string tentk = txtUsername.Text;
             string xacnhanMK = txtXacNhanMK.Text;
             string matkhau = txtPassword.Text;
             string email = txtEmail.Text;
             string hoten = txtHoTen.Text;
             string sdt = txtSoDienThoai.Text;
             string diachi = txtDiaChi.Text;
-            if (hoten.Trim() == "") { MessageBox.Show("Vui lòng nhập họ tên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
-            else if (email.Trim() == "") { MessageBox.Show("Vui lòng nhập Email!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
-            else if (sdt.Trim() == "") { MessageBox.Show("Vui lòng nhập Số điện thoại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
-
-            else if (diachi.Trim() == "") { MessageBox.Show("Vui lòng nhập địa chỉ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
-            else if (tentk.Trim() == "") { MessageBox.Show("Vui lòng nhập tên tài khoản!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
-            else if (matkhau.Trim() == "") { MessageBox.Show("Vui lòng nhập mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
-            else if (xacnhanMK.Trim() == "") { MessageBox.Show("Vui lòng nhập xác nhận mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
-
-            else if (xacnhanMK != matkhau) { MessageBox.Show("Mật khẩu xác nhận không trùng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-            else if (modify.TaiKhoans("Select * from TaiKhoan where Email = '" + email + "'").Count() != 0)
+            if (xacnhanMK.Trim() == "")
             {
-
-                MessageBox.Show("Email này đã được đăng ký!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+                MessageBox.Show("Vui lòng nhập xác nhận mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if (modify.TaiKhoans("Select * from TaiKhoan where Email = '" + sdt + "'").Count() != 0)
+            else if (xacnhanMK != matkhau)
             {
-
-                MessageBox.Show("Số điện thoại này đã được đăng ký!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+                MessageBox.Show("Mật khẩu xác nhận không trùng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                try
-                {
-                    string query = "Insert into TaiKhoan values ('" + tentk + "','" + matkhau + "','" + email + "','" + hoten + "','" + sdt + "','" + diachi + "')";
-                    modify.Command(query);
-                    MessageBox.Show("Đăng ký thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
-                }
-                catch
-                {
-                    MessageBox.Show("Tên tài khoản này đã được đăng ký!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                modify.addAccount(tentk, matkhau, email, hoten, sdt, diachi);
             }
         }
         private void btnClose_Click(object sender, EventArgs e)

@@ -203,6 +203,16 @@ namespace TienDien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap test_account_23px {
+            get {
+                object obj = ResourceManager.GetObject("test_account_23px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap tumble_dryer_40px {
             get {
                 object obj = ResourceManager.GetObject("tumble_dryer_40px", resourceCulture);
