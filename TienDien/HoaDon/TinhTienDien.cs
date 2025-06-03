@@ -27,13 +27,13 @@ namespace TienDien
         {
             try
             {
-                if (dataGridView1.SelectedRows.Count == 0)
+                if (dgvHoaDon.SelectedRows.Count == 0)
                 {
                     MessageBox.Show("Vui lòng chọn một dòng để xuất hóa đơn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                string tentk = dataGridView1.SelectedRows[0].Cells["TenTaiKhoan"].Value?.ToString();
-                string maHoaDon = dataGridView1.SelectedRows[0].Cells["MaHoaDon"].Value?.ToString();
+                string tentk = dgvHoaDon.SelectedRows[0].Cells["TenTaiKhoan"].Value?.ToString();
+                string maHoaDon = dgvHoaDon.SelectedRows[0].Cells["MaHoaDon"].Value?.ToString();
                 if (string.IsNullOrEmpty(maHoaDon))
                 {
                     MessageBox.Show("Dòng được chọn không hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -55,11 +55,11 @@ namespace TienDien
             {
                 if (txtTentk.Text.Trim() == "") { MessageBox.Show("Vui lòng nhập tên tài khoản!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                 
-                dataGridView1.DataSource = modify.getHoaDon(txtTentk.Text);
-                if (dataGridView1.Rows.Count > 0)
+                dgvHoaDon.DataSource = modify.getHoaDon(txtTentk.Text);
+                if (dgvHoaDon.Rows.Count > 0)
                 {
-                    dataGridView1.CurrentCell = dataGridView1.Rows[0].Cells[0];
-                    dataGridView1.Rows[0].Selected = true;
+                    dgvHoaDon.CurrentCell = dgvHoaDon.Rows[0].Cells[0];
+                    dgvHoaDon.Rows[0].Selected = true;
                 }
             }
             catch (Exception ex)
@@ -72,8 +72,8 @@ namespace TienDien
         {
             try
             {
-                string maHoaDon = dataGridView1.SelectedRows[0].Cells["MaHoaDon"].Value?.ToString();
-                if (dataGridView1.SelectedRows.Count == 0)
+                string maHoaDon = dgvHoaDon.SelectedRows[0].Cells["MaHoaDon"].Value?.ToString();
+                if (dgvHoaDon.SelectedRows.Count == 0)
                 {
                     MessageBox.Show("Vui lòng chọn một dòng để xuất hóa đơn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -108,7 +108,7 @@ namespace TienDien
         {
             try
             {
-                dataGridView1.DataSource = modify.getHoaDon(txtTentk.Text);
+                dgvHoaDon.DataSource = modify.getHoaDon(txtTentk.Text);
             }
             catch (Exception ex)
             {
@@ -117,16 +117,13 @@ namespace TienDien
             }
         }
 
-        private void txtTentk_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void txtTentk_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                btnLoad.PerformClick();
+                btnLoadHoaDon.PerformClick();
                 e.SuppressKeyPress = true;
             }
         }

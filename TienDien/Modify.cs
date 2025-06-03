@@ -11,276 +11,228 @@ namespace TienDien
 {
     internal class Modify
     {
-        SqlCommand sqlCommand;
-        SqlDataReader dataReader;
-        public List<TaiKhoan> TaiKhoans(string query)
+        public List<TaiKhoan> TaiKhoans(string query, params SqlParameter[] parameters)
         {
-            List<TaiKhoan> taiKhoans = new List<TaiKhoan>();
-            using (SqlConnection sqlConnection = Connection.GetSqlConnection())
+            var taiKhoans = new List<TaiKhoan>();
+            using (var sqlConnection = Connection.GetSqlConnection())
+            using (var sqlCommand = new SqlCommand(query, sqlConnection))
             {
+                if (parameters != null && parameters.Length > 0)
+                    sqlCommand.Parameters.AddRange(parameters);
                 sqlConnection.Open();
-                sqlCommand = new SqlCommand(query, sqlConnection);
-                dataReader = sqlCommand.ExecuteReader();
-                while (dataReader.Read())
+                using (var dataReader = sqlCommand.ExecuteReader())
                 {
-                    taiKhoans.Add(new TaiKhoan(dataReader.GetString(0), dataReader.GetString(1)));
+                    while (dataReader.Read())
+                    {
+                        taiKhoans.Add(new TaiKhoan(dataReader.GetString(0), dataReader.GetString(1)));
+                    }
                 }
-                sqlConnection.Close();
             }
             return taiKhoans;
         }
+
         public object GetFieldValue(string fieldName, string tableName, string conditionField, string conditionValue)
         {
-            object fieldValue = null;
             string query = $"SELECT {fieldName} FROM {tableName} WHERE {conditionField} = @ConditionValue";
-
-            using (SqlConnection connection = Connection.GetSqlConnection())
+            using (var connection = Connection.GetSqlConnection())
+            using (var cmd = new SqlCommand(query, connection))
             {
+                cmd.Parameters.AddWithValue("@ConditionValue", conditionValue);
                 try
                 {
                     connection.Open();
-                    using (SqlCommand cmd = new SqlCommand(query, connection))
-                    {
-                        cmd.Parameters.AddWithValue("@ConditionValue", conditionValue);
-                        fieldValue = cmd.ExecuteScalar();
-                    }
+                    var fieldValue = cmd.ExecuteScalar();
+                    return fieldValue == DBNull.Value ? null : fieldValue;
                 }
                 catch
                 {
-                    fieldValue = null;
+                    return null;
                 }
-                connection.Close();
             }
+        }
 
-            return fieldValue;
-        }
-        public object CmdGet(string query)
+        public object CmdGet(string query, params SqlParameter[] parameters)
         {
-            using (SqlConnection connection = Connection.GetSqlConnection())
+            using (var connection = Connection.GetSqlConnection())
+            using (var command = new SqlCommand(query, connection))
             {
+                if (parameters != null && parameters.Length > 0)
+                    command.Parameters.AddRange(parameters);
                 connection.Open();
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    // Thực thi truy vấn và lấy giá trị
-                    object result = command.ExecuteScalar();
-                    return result == DBNull.Value ? null : result;
-                }
+                var result = command.ExecuteScalar();
+                return result == DBNull.Value ? null : result;
             }
         }
-        public void Command(string query)
+
+        public void Command(string query, params SqlParameter[] parameters)
         {
-            using (SqlConnection sqlConnection = Connection.GetSqlConnection())
+            using (var sqlConnection = Connection.GetSqlConnection())
+            using (var sqlCommand = new SqlCommand(query, sqlConnection))
             {
+                if (parameters != null && parameters.Length > 0)
+                    sqlCommand.Parameters.AddRange(parameters);
                 sqlConnection.Open();
-                sqlCommand = new SqlCommand(query, sqlConnection);
-                sqlCommand.ExecuteNonQuery(); // thuc thi cau truy van
-                sqlConnection.Close();
+                sqlCommand.ExecuteNonQuery();
             }
         }
-        SqlDataAdapter dataAdapter;
+
+        public DataTable GetDataTable(string query, params SqlParameter[] parameters)
+        {
+            var dt = new DataTable();
+            using (var sqlConnection = Connection.GetSqlConnection())
+            using (var dataAdapter = new SqlDataAdapter(query, sqlConnection))
+            {
+                if (parameters != null && parameters.Length > 0)
+                    dataAdapter.SelectCommand.Parameters.AddRange(parameters);
+                sqlConnection.Open();
+                dataAdapter.Fill(dt);
+            }
+            return dt;
+        }
+
         public DataTable getHoaDon(string tentk)
         {
-            DataTable dt = new DataTable();
-            string query = "select * from HoaDon where TenTaiKhoan = '" + tentk + "'";
-            using (SqlConnection sqlConnection = Connection.GetSqlConnection())
-            {
-                sqlConnection.Open();
-                dataAdapter = new SqlDataAdapter(query, sqlConnection);
-                dataAdapter.Fill(dt);
-                sqlConnection.Close();
-            }
-            return dt;
+            string query = "SELECT * FROM HoaDon WHERE TenTaiKhoan = @TenTaiKhoan";
+            return GetDataTable(query, new SqlParameter("@TenTaiKhoan", tentk));
         }
+
         public DataTable HoaDon(string mahoadon)
         {
-            DataTable dt = new DataTable();
-            string query = "select * from HoaDon where MaHoaDon = '" + mahoadon + "'";
-            using (SqlConnection sqlConnection = Connection.GetSqlConnection())
-            {
-                sqlConnection.Open();
-                dataAdapter = new SqlDataAdapter(query, sqlConnection);
-                dataAdapter.Fill(dt);
-                sqlConnection.Close();
-            }
-            return dt;
+            string query = "SELECT * FROM HoaDon WHERE MaHoaDon = @MaHoaDon";
+            return GetDataTable(query, new SqlParameter("@MaHoaDon", mahoadon));
         }
+
         public DataTable HoaDon_TaiKhoan(string tentk)
         {
-            DataTable dt = new DataTable();
             string query = @"
-            SELECT 
-                hd.MaHoaDon,
-                hd.TenTaiKhoan,
-                hd.SoDien,
-                hd.ThangHoaDon,
-                hd.TrangThai,
-                hd.ThanhTien,
-                tk.Email,
-                tk.HoTen,
-                tk.SoDienThoai,
-                tk.DiaChi
-            FROM 
-                HoaDon hd
-            INNER JOIN 
-                TaiKhoan tk ON hd.TenTaiKhoan = tk.TenTaiKhoan
-            WHERE 
-                hd.TenTaiKhoan = '" + tentk + "' ";
-            using (SqlConnection sqlConnection = Connection.GetSqlConnection())
-            {
-                sqlConnection.Open();
-                dataAdapter = new SqlDataAdapter(query, sqlConnection);
-                dataAdapter.Fill(dt);
-                sqlConnection.Close();
-            }
-            return dt;
+                    SELECT 
+                        hd.MaHoaDon,
+                        hd.TenTaiKhoan,
+                        hd.SoDien,
+                        hd.ThangHoaDon,
+                        hd.TrangThai,
+                        hd.ThanhTien,
+                        tk.Email,
+                        tk.HoTen,
+                        tk.SoDienThoai,
+                        tk.DiaChi
+                    FROM 
+                        HoaDon hd
+                    INNER JOIN 
+                        TaiKhoan tk ON hd.TenTaiKhoan = tk.TenTaiKhoan
+                    WHERE 
+                        hd.TenTaiKhoan = @TenTaiKhoan";
+            return GetDataTable(query, new SqlParameter("@TenTaiKhoan", tentk));
         }
+
         public DataTable all_ADMIN()
         {
-            DataTable dt = new DataTable();
             string query = @"
-            SELECT 
-                hd.MaHoaDon,
-                hd.TenTaiKhoan,
-                tk.HoTen,
-                tk.SoDienThoai,
-                tk.Email,
-                tk.DiaChi,
-                hd.ThangHoaDon,
-                hd.TrangThai,
-                hd.SoDien,
-                hd.ThanhTien
-            FROM 
-                HoaDon hd
-            INNER JOIN 
-                TaiKhoan tk ON hd.TenTaiKhoan = tk.TenTaiKhoan
-            ";
-            using (SqlConnection sqlConnection = Connection.GetSqlConnection())
-            {
-                sqlConnection.Open();
-                dataAdapter = new SqlDataAdapter(query, sqlConnection);
-                dataAdapter.Fill(dt);
-                sqlConnection.Close();
-            }
-            return dt;
+                    SELECT 
+                        hd.MaHoaDon,
+                        hd.TenTaiKhoan,
+                        tk.HoTen,
+                        tk.SoDienThoai,
+                        tk.Email,
+                        tk.DiaChi,
+                        hd.ThangHoaDon,
+                        hd.TrangThai,
+                        hd.SoDien,
+                        hd.ThanhTien
+                    FROM 
+                        HoaDon hd
+                    INNER JOIN 
+                        TaiKhoan tk ON hd.TenTaiKhoan = tk.TenTaiKhoan";
+            return GetDataTable(query);
         }
+
         public DataTable getTaiKhoan_ADMIN()
         {
-            DataTable dt = new DataTable();
             string query = @"
-            SELECT 
-                tk.TenTaiKhoan,
-                tk.MatKhau,
-                tk.HoTen,
-                tk.Email,
-                tk.SoDienThoai,
-                tk.DiaChi
-            FROM 
-                TaiKhoan tk
-            ";
-            using (SqlConnection sqlConnection = Connection.GetSqlConnection())
-            {
-                sqlConnection.Open();
-                dataAdapter = new SqlDataAdapter(query, sqlConnection);
-                dataAdapter.Fill(dt);
-                sqlConnection.Close();
-            }
-            return dt;
+                    SELECT 
+                        tk.TenTaiKhoan,
+                        tk.MatKhau,
+                        tk.HoTen,
+                        tk.Email,
+                        tk.SoDienThoai,
+                        tk.DiaChi
+                    FROM 
+                        TaiKhoan tk";
+            return GetDataTable(query);
         }
+
         public DataTable ChuaThanhToan_ADMIN()
         {
-            DataTable dt = new DataTable();
             string query = @"
-            SELECT DISTINCT TaiKhoan.TenTaiKhoan,TaiKhoan.Email,TaiKhoan.HoTen,TaiKhoan.SoDienThoai, TaiKhoan.DiaChi
-            FROM TaiKhoan
-            JOIN HoaDon ON TaiKhoan.TenTaiKhoan = HoaDon.TenTaiKhoan
-            WHERE TrangThai = 0;
-
-            ";
-            using (SqlConnection sqlConnection = Connection.GetSqlConnection())
-            {
-                sqlConnection.Open();
-                dataAdapter = new SqlDataAdapter(query, sqlConnection);
-                dataAdapter.Fill(dt);
-                sqlConnection.Close();
-            }
-            return dt;
+                    SELECT DISTINCT TaiKhoan.TenTaiKhoan, TaiKhoan.Email, TaiKhoan.HoTen, TaiKhoan.SoDienThoai, TaiKhoan.DiaChi
+                    FROM TaiKhoan
+                    JOIN HoaDon ON TaiKhoan.TenTaiKhoan = HoaDon.TenTaiKhoan
+                    WHERE TrangThai = 0";
+            return GetDataTable(query);
         }
+
         public void addAccount(string tentk, string matkhau, string email, string hoten, string sdt, string diachi)
         {
-            Modify modify = new Modify();
-            if (hoten.Trim() == "") { MessageBox.Show("Vui lòng nhập họ tên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
-            else if (email.Trim() == "") { MessageBox.Show("Vui lòng nhập Email!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
-            else if (sdt.Trim() == "") { MessageBox.Show("Vui lòng nhập Số điện thoại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
-
-            else if (diachi.Trim() == "") { MessageBox.Show("Vui lòng nhập địa chỉ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
-            else if (tentk.Trim() == "") { MessageBox.Show("Vui lòng nhập tên tài khoản!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
-            else if (matkhau.Trim() == "") { MessageBox.Show("Vui lòng nhập mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
-            else if (modify.TaiKhoans("Select * from TaiKhoan where Email = '" + email + "'").Count() != 0)
+            if (string.IsNullOrWhiteSpace(hoten) ||
+                string.IsNullOrWhiteSpace(email) ||
+                string.IsNullOrWhiteSpace(sdt) ||
+                string.IsNullOrWhiteSpace(diachi) ||
+                string.IsNullOrWhiteSpace(tentk) ||
+                string.IsNullOrWhiteSpace(matkhau))
             {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
+            string checkEmailQuery = "SELECT COUNT(*) FROM TaiKhoan WHERE Email = @Email";
+            if ((int)CmdGet(checkEmailQuery, new SqlParameter("@Email", email)) > 0)
+            {
                 MessageBox.Show("Email này đã được đăng ký!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            else
+
+            try
             {
-                try
-                {
-                    string query = "Insert into TaiKhoan values ('" + tentk + "','" + matkhau + "','" + email + "','" + hoten + "','" + sdt + "','" + diachi + "')";
-                    modify.Command(query);
-                    MessageBox.Show("Đăng ký thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch
-                {
-                    MessageBox.Show("Tên tài khoản này đã được đăng ký!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                string query = "INSERT INTO TaiKhoan VALUES (@TenTaiKhoan, @MatKhau, @Email, @HoTen, @SoDienThoai, @DiaChi)";
+                Command(query,
+                    new SqlParameter("@TenTaiKhoan", tentk),
+                    new SqlParameter("@MatKhau", matkhau),
+                    new SqlParameter("@Email", email),
+                    new SqlParameter("@HoTen", hoten),
+                    new SqlParameter("@SoDienThoai", sdt),
+                    new SqlParameter("@DiaChi", diachi));
+                MessageBox.Show("Đăng ký thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch
+            {
+                MessageBox.Show("Tên tài khoản này đã được đăng ký!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
         public void editAccount(string oldTenTaiKhoan, string newTenTaiKhoan, string matkhau, string email, string hoten, string sdt, string diachi)
         {
-            if (hoten.Trim() == "")
+            if (string.IsNullOrWhiteSpace(hoten) ||
+                string.IsNullOrWhiteSpace(email) ||
+                string.IsNullOrWhiteSpace(sdt) ||
+                string.IsNullOrWhiteSpace(diachi) ||
+                string.IsNullOrWhiteSpace(newTenTaiKhoan) ||
+                string.IsNullOrWhiteSpace(matkhau))
             {
-                MessageBox.Show("Vui lòng nhập họ tên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            if (email.Trim() == "")
-            {
-                MessageBox.Show("Vui lòng nhập Email!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            if (sdt.Trim() == "")
-            {
-                MessageBox.Show("Vui lòng nhập Số điện thoại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            if (diachi.Trim() == "")
-            {
-                MessageBox.Show("Vui lòng nhập địa chỉ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            if (newTenTaiKhoan.Trim() == "")
-            {
-                MessageBox.Show("Vui lòng nhập tên tài khoản!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            if (matkhau.Trim() == "")
-            {
-                MessageBox.Show("Vui lòng nhập mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            using (SqlConnection conn = Connection.GetSqlConnection())
+            using (var conn = Connection.GetSqlConnection())
             {
                 conn.Open();
 
-                // Kiểm tra trùng tên tài khoản nếu đổi tên
                 if (!string.Equals(oldTenTaiKhoan, newTenTaiKhoan, StringComparison.OrdinalIgnoreCase))
                 {
                     string checkUsernameQuery = "SELECT COUNT(*) FROM TaiKhoan WHERE TenTaiKhoan = @NewTenTaiKhoan";
-                    using (SqlCommand cmd = new SqlCommand(checkUsernameQuery, conn))
+                    using (var cmd = new SqlCommand(checkUsernameQuery, conn))
                     {
                         cmd.Parameters.AddWithValue("@NewTenTaiKhoan", newTenTaiKhoan);
-                        int count = (int)cmd.ExecuteScalar();
-                        if (count > 0)
+                        if ((int)cmd.ExecuteScalar() > 0)
                         {
                             MessageBox.Show("Tên tài khoản này đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             return;
@@ -289,12 +241,11 @@ namespace TienDien
                 }
 
                 string checkEmailQuery = "SELECT COUNT(*) FROM TaiKhoan WHERE Email = @Email AND TenTaiKhoan <> @OldTenTaiKhoan";
-                using (SqlCommand cmd = new SqlCommand(checkEmailQuery, conn))
+                using (var cmd = new SqlCommand(checkEmailQuery, conn))
                 {
                     cmd.Parameters.AddWithValue("@Email", email);
                     cmd.Parameters.AddWithValue("@OldTenTaiKhoan", oldTenTaiKhoan);
-                    int count = (int)cmd.ExecuteScalar();
-                    if (count > 0)
+                    if ((int)cmd.ExecuteScalar() > 0)
                     {
                         MessageBox.Show("Email này đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
@@ -312,7 +263,7 @@ namespace TienDien
                                        WHERE TenTaiKhoan = @OldTenTaiKhoan";
                 try
                 {
-                    using (SqlCommand cmd = new SqlCommand(updateQuery, conn))
+                    using (var cmd = new SqlCommand(updateQuery, conn))
                     {
                         cmd.Parameters.AddWithValue("@NewTenTaiKhoan", newTenTaiKhoan);
                         cmd.Parameters.AddWithValue("@MatKhau", matkhau);
@@ -322,21 +273,13 @@ namespace TienDien
                         cmd.Parameters.AddWithValue("@DiaChi", diachi);
                         cmd.Parameters.AddWithValue("@OldTenTaiKhoan", oldTenTaiKhoan);
                         int rows = cmd.ExecuteNonQuery();
-                        if (rows > 0)
-                        {
-                            MessageBox.Show("Sửa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Không tìm thấy tài khoản để sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
+                        MessageBox.Show(rows > 0 ? "Sửa thành công!" : "Không tìm thấy tài khoản để sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 catch
                 {
                     MessageBox.Show("Có lỗi xảy ra khi sửa tài khoản!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                conn.Close();
             }
         }
 
@@ -348,46 +291,33 @@ namespace TienDien
                 return;
             }
 
-            DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa tài khoản '{tenTaiKhoan}' không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result != DialogResult.Yes) return;
+            if (MessageBox.Show($"Bạn có chắc chắn muốn xóa tài khoản '{tenTaiKhoan}' không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes)
+                return;
 
-            using (SqlConnection conn = Connection.GetSqlConnection())
+            using (var conn = Connection.GetSqlConnection())
             {
                 try
                 {
                     conn.Open();
 
-                    // Xóa các hóa đơn liên quan trước
                     string deleteHoaDonQuery = "DELETE FROM HoaDon WHERE TenTaiKhoan = @TenTaiKhoan";
-                    using (SqlCommand cmdHoaDon = new SqlCommand(deleteHoaDonQuery, conn))
+                    using (var cmdHoaDon = new SqlCommand(deleteHoaDonQuery, conn))
                     {
                         cmdHoaDon.Parameters.AddWithValue("@TenTaiKhoan", tenTaiKhoan);
                         cmdHoaDon.ExecuteNonQuery();
                     }
 
-                    // Sau đó xóa tài khoản
                     string deleteTaiKhoanQuery = "DELETE FROM TaiKhoan WHERE TenTaiKhoan = @TenTaiKhoan";
-                    using (SqlCommand cmdTaiKhoan = new SqlCommand(deleteTaiKhoanQuery, conn))
+                    using (var cmdTaiKhoan = new SqlCommand(deleteTaiKhoanQuery, conn))
                     {
                         cmdTaiKhoan.Parameters.AddWithValue("@TenTaiKhoan", tenTaiKhoan);
                         int rows = cmdTaiKhoan.ExecuteNonQuery();
-                        if (rows > 0)
-                        {
-                            MessageBox.Show("Xóa tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Không tìm thấy tài khoản để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
+                        MessageBox.Show(rows > 0 ? "Xóa tài khoản thành công!" : "Không tìm thấy tài khoản để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Có lỗi xảy ra khi xóa tài khoản!\n" + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                finally
-                {
-                    conn.Close();
                 }
             }
         }

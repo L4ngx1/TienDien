@@ -139,7 +139,9 @@ namespace TienDien.Admin
             {
                 var modify = new Modify();
                 modify.deleteAccount(tentk);
+                
                 ReloadData();
+                reset();
             }
             catch (Exception ex)
             {

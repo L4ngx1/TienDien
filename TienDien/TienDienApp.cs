@@ -17,13 +17,13 @@ namespace TienDien
         public TienDienApp()
         {
             InitializeComponent();
-            pnlNav.Height = btnDashboard.Height;
-            pnlNav.Top = btnDashboard.Top;
-            pnlNav.Left = btnDashboard.Left;
-            btnDashboard.BackColor = Color.FromArgb(50, 153, 222);
-            dashboard1.Visible = true;
+            pnlNav.Height = btnTienDien.Height;
+            pnlNav.Top = btnTienDien.Top;
+            pnlNav.Left = btnTienDien.Left;
+            btnTienDien.BackColor = Color.FromArgb(50, 153, 222);
+            dashboard1.Visible = false;
             uocTinh1.Visible = false;
-            tinhTienDien1.Visible = false;
+            tinhTienDien1.Visible = true;
         }
         private void Mouse_Down(object sender, MouseEventArgs e)
         {

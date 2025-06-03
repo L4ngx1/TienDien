@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace TienDien
 {
-    public partial class Login : Form
+    public partial class LoginForm : Form
     {
         //Di chuyen Form khong can border
         public Point mouseLocation;
@@ -28,7 +28,7 @@ namespace TienDien
                 this.Location = new Point(this.Location.X + (e.X - mouseLocation.X), this.Location.Y + (e.Y - mouseLocation.Y));
             }
         }
-        public Login()
+        public LoginForm()
         {
             InitializeComponent();
         }
@@ -50,7 +50,10 @@ namespace TienDien
             if (tentk == "admin" && matkhau == "admin")
             {
                 AdminForm form= new AdminForm();
+                txtPassword.Text = "";
+                txtUsername.Text = "";
                 form.ShowDialog();
+
             }
             else if (tentk.Trim() == "") { MessageBox.Show("Vui lòng nhập tên tài khoản!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
             else if (matkhau.Trim() == "") { MessageBox.Show("Vui lòng nhập mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
@@ -60,6 +63,8 @@ namespace TienDien
                 {
                     CurrentUsername = tentk;
                     TienDienApp appForm = new TienDienApp();
+                    txtPassword.Text = "";
+                    txtUsername.Text = "";
                     appForm.ShowDialog();
                 }
                 else

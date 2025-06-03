@@ -34,13 +34,13 @@ namespace TienDien
             this.lblTinhTienDien = new System.Windows.Forms.Label();
             this.btnXuatHoaDon = new System.Windows.Forms.Button();
             this.btnThanhToan = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnLoad = new System.Windows.Forms.Button();
+            this.dgvHoaDon = new System.Windows.Forms.DataGridView();
+            this.btnLoadHoaDon = new System.Windows.Forms.Button();
             this.lblChuthich = new System.Windows.Forms.Label();
             this.txtTentk = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.lblTentk = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTinhTienDien
@@ -63,7 +63,7 @@ namespace TienDien
             this.btnXuatHoaDon.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXuatHoaDon.ForeColor = System.Drawing.Color.White;
             this.btnXuatHoaDon.Location = new System.Drawing.Point(53, 687);
-            this.btnXuatHoaDon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXuatHoaDon.Margin = new System.Windows.Forms.Padding(4);
             this.btnXuatHoaDon.Name = "btnXuatHoaDon";
             this.btnXuatHoaDon.Size = new System.Drawing.Size(191, 37);
             this.btnXuatHoaDon.TabIndex = 14;
@@ -80,7 +80,7 @@ namespace TienDien
             this.btnThanhToan.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThanhToan.ForeColor = System.Drawing.Color.White;
             this.btnThanhToan.Location = new System.Drawing.Point(252, 687);
-            this.btnThanhToan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThanhToan.Margin = new System.Windows.Forms.Padding(4);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.Size = new System.Drawing.Size(191, 37);
             this.btnThanhToan.TabIndex = 15;
@@ -88,33 +88,33 @@ namespace TienDien
             this.btnThanhToan.UseVisualStyleBackColor = false;
             this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
-            // dataGridView1
+            // dgvHoaDon
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(53, 302);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1067, 351);
-            this.dataGridView1.TabIndex = 16;
+            this.dgvHoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHoaDon.Location = new System.Drawing.Point(53, 302);
+            this.dgvHoaDon.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvHoaDon.Name = "dgvHoaDon";
+            this.dgvHoaDon.RowHeadersWidth = 51;
+            this.dgvHoaDon.Size = new System.Drawing.Size(1067, 351);
+            this.dgvHoaDon.TabIndex = 16;
             // 
-            // btnLoad
+            // btnLoadHoaDon
             // 
-            this.btnLoad.BackColor = System.Drawing.Color.Navy;
-            this.btnLoad.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLoad.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoad.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoad.ForeColor = System.Drawing.Color.White;
-            this.btnLoad.Location = new System.Drawing.Point(692, 156);
-            this.btnLoad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(428, 36);
-            this.btnLoad.TabIndex = 17;
-            this.btnLoad.Text = "Tải thông tin hóa đơn";
-            this.btnLoad.UseVisualStyleBackColor = false;
-            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            this.btnLoadHoaDon.BackColor = System.Drawing.Color.Navy;
+            this.btnLoadHoaDon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLoadHoaDon.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLoadHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoadHoaDon.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadHoaDon.ForeColor = System.Drawing.Color.White;
+            this.btnLoadHoaDon.Location = new System.Drawing.Point(692, 156);
+            this.btnLoadHoaDon.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLoadHoaDon.Name = "btnLoadHoaDon";
+            this.btnLoadHoaDon.Size = new System.Drawing.Size(428, 36);
+            this.btnLoadHoaDon.TabIndex = 17;
+            this.btnLoadHoaDon.Text = "Tải thông tin hóa đơn";
+            this.btnLoadHoaDon.UseVisualStyleBackColor = false;
+            this.btnLoadHoaDon.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // lblChuthich
             // 
@@ -131,11 +131,10 @@ namespace TienDien
             // 
             this.txtTentk.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTentk.Location = new System.Drawing.Point(53, 156);
-            this.txtTentk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTentk.Margin = new System.Windows.Forms.Padding(4);
             this.txtTentk.Name = "txtTentk";
             this.txtTentk.Size = new System.Drawing.Size(629, 34);
             this.txtTentk.TabIndex = 19;
-            this.txtTentk.TextChanged += new System.EventHandler(this.txtTentk_TextChanged);
             this.txtTentk.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTentk_KeyDown);
             // 
             // contextMenuStrip1
@@ -163,16 +162,16 @@ namespace TienDien
             this.Controls.Add(this.lblTentk);
             this.Controls.Add(this.txtTentk);
             this.Controls.Add(this.lblChuthich);
-            this.Controls.Add(this.btnLoad);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnLoadHoaDon);
+            this.Controls.Add(this.dgvHoaDon);
             this.Controls.Add(this.btnThanhToan);
             this.Controls.Add(this.btnXuatHoaDon);
             this.Controls.Add(this.lblTinhTienDien);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TinhTienDien";
             this.Size = new System.Drawing.Size(1173, 827);
             this.Load += new System.EventHandler(this.TinhTienDien_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,8 +182,8 @@ namespace TienDien
         private System.Windows.Forms.Label lblTinhTienDien;
         private System.Windows.Forms.Button btnXuatHoaDon;
         private System.Windows.Forms.Button btnThanhToan;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private Button btnLoad;
+        private System.Windows.Forms.DataGridView dgvHoaDon;
+        private Button btnLoadHoaDon;
         private Label lblChuthich;
         private TextBox txtTentk;
         private ContextMenuStrip contextMenuStrip1;
