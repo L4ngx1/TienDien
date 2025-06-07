@@ -54,14 +54,6 @@
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>..\packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Data.Desktop.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Data.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Drawing.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Printing.v24.2.Core, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Sparkline.v24.2.Core, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Utils.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraBars.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
@@ -104,11 +96,23 @@
     <Compile Include="Admin\AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainApp\QLTKCaNhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainApp\QLTKCaNhan.Designer.cs">
+      <DependentUpon>QLTKCaNhan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\UserCtrlQuanLyHD.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Admin\UserCtrlQuanLyHD.Designer.cs">
       <DependentUpon>UserCtrlQuanLyHD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserCtrlThongKeHD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\UserCtrlThongKeHD.Designer.cs">
+      <DependentUpon>UserCtrlThongKeHD.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin\UserCtrlQuanLyTK.cs">
       <SubType>UserControl</SubType>
@@ -117,10 +121,10 @@
       <DependentUpon>UserCtrlQuanLyTK.cs</DependentUpon>
     </Compile>
     <Compile Include="Connection.cs" />
-    <Compile Include="Dashboard.cs">
+    <Compile Include="MainApp\Dashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Dashboard.Designer.cs">
+    <Compile Include="MainApp\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="DataSet1.Designer.cs">
@@ -128,10 +132,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="HoaDon\HoaDonForm.cs">
+    <Compile Include="DienBacThang.cs" />
+    <Compile Include="MainApp\HoaDon\HoaDonForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HoaDon\HoaDonForm.Designer.cs">
+    <Compile Include="MainApp\HoaDon\HoaDonForm.Designer.cs">
       <DependentUpon>HoaDonForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Login_Register\Login.cs">
@@ -140,6 +145,7 @@
     <Compile Include="Login_Register\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login_Register\Season.cs" />
     <Compile Include="Modify.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -156,43 +162,44 @@
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="Login_Register\TaiKhoan.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="TienDienApp.cs">
+    <Compile Include="MainApp\TienDienApp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TienDienApp.Designer.cs">
+    <Compile Include="MainApp\TienDienApp.Designer.cs">
       <DependentUpon>TienDienApp.cs</DependentUpon>
     </Compile>
-    <Compile Include="HoaDon\TinhTienDien.cs">
+    <Compile Include="MainApp\HoaDon\TinhTienDien.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="HoaDon\TinhTienDien.Designer.cs">
+    <Compile Include="MainApp\HoaDon\TinhTienDien.Designer.cs">
       <DependentUpon>TinhTienDien.cs</DependentUpon>
     </Compile>
-    <Compile Include="UocTinhDienNang\Device.cs" />
-    <Compile Include="UocTinhDienNang\UocTinh.cs">
+    <Compile Include="MainApp\UocTinhDienNang\Device.cs" />
+    <Compile Include="MainApp\UocTinhDienNang\UocTinh.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UocTinhDienNang\UocTinh.Designer.cs">
+    <Compile Include="MainApp\UocTinhDienNang\UocTinh.Designer.cs">
       <DependentUpon>UocTinh.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Admin\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainApp\QLTKCaNhan.resx">
+      <DependentUpon>QLTKCaNhan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\UserCtrlQuanLyHD.resx">
       <DependentUpon>UserCtrlQuanLyHD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UserCtrlThongKeHD.resx">
+      <DependentUpon>UserCtrlThongKeHD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\UserCtrlQuanLyTK.resx">
       <DependentUpon>UserCtrlQuanLyTK.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dashboard.resx">
+    <EmbeddedResource Include="MainApp\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HoaDon\HoaDonForm.resx">
+    <EmbeddedResource Include="MainApp\HoaDon\HoaDonForm.resx">
       <DependentUpon>HoaDonForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login_Register\Login.resx">
@@ -209,14 +216,14 @@
     <EmbeddedResource Include="Login_Register\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HoaDon\Report1.rdlc" />
-    <EmbeddedResource Include="TienDienApp.resx">
+    <EmbeddedResource Include="MainApp\HoaDon\Report1.rdlc" />
+    <EmbeddedResource Include="MainApp\TienDienApp.resx">
       <DependentUpon>TienDienApp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HoaDon\TinhTienDien.resx">
+    <EmbeddedResource Include="MainApp\HoaDon\TinhTienDien.resx">
       <DependentUpon>TinhTienDien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UocTinhDienNang\UocTinh.resx">
+    <EmbeddedResource Include="MainApp\UocTinhDienNang\UocTinh.resx">
       <DependentUpon>UocTinh.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataSet1.xsc">
@@ -235,6 +242,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -284,7 +296,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
-    <None Include="Resources\test_account_23px.png" />
+    <None Include="Resources\hear_no_evil_monkey_130px.png" />
+    <None Include="Resources\see_no_evil_monkey_130px.png" />
+    <None Include="Resources\eye_20px.png" />
+    <None Include="Resources\invisible_20px.png" />
+    <None Include="Resources\test_account_100px.png" />
+    <None Include="Resources\customer_130px.png" />
     <None Include="Resources\light_40px1.png" />
     <None Include="Resources\fan_40px.png" />
     <None Include="Resources\microwave_40px.png" />

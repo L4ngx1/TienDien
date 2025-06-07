@@ -118,11 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="conflict_23px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\conflict_23px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Home_23px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Home_23px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="invisible_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\invisible_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="eye_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eye_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="microwave_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\microwave_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,8 +142,14 @@
   <data name="fan_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fan_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="test_account_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\test_account_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="air_conditioner_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\air_conditioner_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="electricity-icon-original" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\electricity-icon-original.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="water_heater_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\water_heater_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,11 +166,14 @@
   <data name="estimate_23px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\estimate_23px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="electricity-icon-original" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\electricity-icon-original.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="conflict_23px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\conflict_23px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dishwasher_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dishwasher_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="customer_130px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\customer_130px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="light_40px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\light_40px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,10 +181,13 @@
   <data name="shutdown_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shutdown_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="see_no_evil_monkey_130px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\see_no_evil_monkey_130px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="electric_stovetop_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\electric_stovetop_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="test_account_23px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\test_account_23px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="hear_no_evil_monkey_130px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hear_no_evil_monkey_130px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

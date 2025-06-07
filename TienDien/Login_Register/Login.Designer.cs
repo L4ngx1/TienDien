@@ -30,7 +30,6 @@
         {
             this.lblLoginAccount = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.elecIcon = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnRegister = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,12 +41,15 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
+            this.picEye = new System.Windows.Forms.PictureBox();
             this.picPassword = new System.Windows.Forms.PictureBox();
             this.picUsername = new System.Windows.Forms.PictureBox();
+            this.monkeyIcon = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.elecIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEye)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUsername)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monkeyIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // lblLoginAccount
@@ -55,10 +57,9 @@
             this.lblLoginAccount.AutoSize = true;
             this.lblLoginAccount.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoginAccount.ForeColor = System.Drawing.Color.Navy;
-            this.lblLoginAccount.Location = new System.Drawing.Point(459, 86);
-            this.lblLoginAccount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLoginAccount.Location = new System.Drawing.Point(344, 70);
             this.lblLoginAccount.Name = "lblLoginAccount";
-            this.lblLoginAccount.Size = new System.Drawing.Size(238, 54);
+            this.lblLoginAccount.Size = new System.Drawing.Size(190, 45);
             this.lblLoginAccount.TabIndex = 12;
             this.lblLoginAccount.Text = "Đăng Nhập";
             this.lblLoginAccount.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -66,39 +67,26 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.panel1.Controls.Add(this.elecIcon);
+            this.panel1.Controls.Add(this.monkeyIcon);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btnRegister);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(387, 585);
+            this.panel1.Size = new System.Drawing.Size(290, 475);
             this.panel1.TabIndex = 11;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Mouse_Down);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Mouse_Move);
-            // 
-            // elecIcon
-            // 
-            this.elecIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.elecIcon.Image = global::TienDien.Properties.Resources.electricity_icon_original;
-            this.elecIcon.Location = new System.Drawing.Point(107, 37);
-            this.elecIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.elecIcon.Name = "elecIcon";
-            this.elecIcon.Size = new System.Drawing.Size(173, 160);
-            this.elecIcon.TabIndex = 10;
-            this.elecIcon.TabStop = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(43, 480);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(32, 390);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(302, 23);
+            this.label2.Size = new System.Drawing.Size(229, 17);
             this.label2.TabIndex = 8;
             this.label2.Text = "Bạn chưa có tài khoản? Đăng ký ngay!";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -112,10 +100,9 @@
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegister.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.ForeColor = System.Drawing.Color.White;
-            this.btnRegister.Location = new System.Drawing.Point(47, 505);
-            this.btnRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegister.Location = new System.Drawing.Point(35, 410);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(293, 37);
+            this.btnRegister.Size = new System.Drawing.Size(220, 30);
             this.btnRegister.TabIndex = 4;
             this.btnRegister.Text = "Đăng ký";
             this.btnRegister.UseVisualStyleBackColor = false;
@@ -125,56 +112,51 @@
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 197);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(0, 160);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(387, 181);
+            this.label1.Size = new System.Drawing.Size(290, 147);
             this.label1.TabIndex = 9;
             this.label1.Text = "Chào mừng đến với phần mềm Quản Lý Tiền Điện";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtUsername
             // 
-            this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(469, 223);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(352, 181);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(399, 27);
+            this.txtUsername.Size = new System.Drawing.Size(300, 29);
             this.txtUsername.TabIndex = 0;
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.Color.Black;
-            this.lblUsername.Location = new System.Drawing.Point(465, 198);
-            this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUsername.Location = new System.Drawing.Point(348, 158);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(120, 23);
+            this.lblUsername.Size = new System.Drawing.Size(104, 20);
             this.lblUsername.TabIndex = 7;
             this.lblUsername.Text = "Tên Tài Khoản";
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.Color.Black;
-            this.lblPassword.Location = new System.Drawing.Point(465, 284);
-            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPassword.Location = new System.Drawing.Point(348, 228);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(87, 23);
+            this.lblPassword.Size = new System.Drawing.Size(75, 20);
             this.lblPassword.TabIndex = 6;
             this.lblPassword.Text = "Mật Khẩu";
             // 
             // txtPassword
             // 
-            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(469, 309);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(352, 251);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(399, 27);
+            this.txtPassword.Size = new System.Drawing.Size(300, 27);
             this.txtPassword.TabIndex = 1;
+            this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // btnLogin
@@ -185,10 +167,9 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(469, 383);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogin.Location = new System.Drawing.Point(352, 311);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(173, 37);
+            this.btnLogin.Size = new System.Drawing.Size(130, 30);
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -203,11 +184,10 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(881, 15);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClose.Location = new System.Drawing.Point(661, 12);
             this.btnClose.Name = "btnClose";
             this.btnClose.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnClose.Size = new System.Drawing.Size(29, 27);
+            this.btnClose.Size = new System.Drawing.Size(22, 22);
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -221,9 +201,10 @@
             this.linkLabel1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.linkLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.Navy;
-            this.linkLabel1.Location = new System.Drawing.Point(759, 341);
+            this.linkLabel1.Location = new System.Drawing.Point(569, 281);
+            this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(105, 19);
+            this.linkLabel1.Size = new System.Drawing.Size(83, 13);
             this.linkLabel1.TabIndex = 2;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Quên mật khẩu";
@@ -234,40 +215,62 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.LightGray;
-            this.label3.Location = new System.Drawing.Point(731, 553);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(548, 449);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(182, 23);
+            this.label3.Size = new System.Drawing.Size(139, 17);
             this.label3.TabIndex = 11;
             this.label3.Text = "From TLU with love <3";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // picEye
+            // 
+            this.picEye.BackColor = System.Drawing.Color.Transparent;
+            this.picEye.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picEye.Image = global::TienDien.Properties.Resources.invisible_20px;
+            this.picEye.Location = new System.Drawing.Point(624, 253);
+            this.picEye.Name = "picEye";
+            this.picEye.Size = new System.Drawing.Size(26, 23);
+            this.picEye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picEye.TabIndex = 16;
+            this.picEye.TabStop = false;
+            this.picEye.Click += new System.EventHandler(this.picEye_Click);
+            // 
             // picPassword
             // 
             this.picPassword.Image = global::TienDien.Properties.Resources.password;
-            this.picPassword.Location = new System.Drawing.Point(431, 309);
-            this.picPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picPassword.Location = new System.Drawing.Point(324, 253);
             this.picPassword.Name = "picPassword";
-            this.picPassword.Size = new System.Drawing.Size(31, 28);
+            this.picPassword.Size = new System.Drawing.Size(23, 23);
             this.picPassword.TabIndex = 15;
             this.picPassword.TabStop = false;
             // 
             // picUsername
             // 
             this.picUsername.Image = global::TienDien.Properties.Resources.username;
-            this.picUsername.Location = new System.Drawing.Point(431, 223);
-            this.picUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picUsername.Location = new System.Drawing.Point(324, 184);
             this.picUsername.Name = "picUsername";
-            this.picUsername.Size = new System.Drawing.Size(31, 28);
+            this.picUsername.Size = new System.Drawing.Size(23, 23);
             this.picUsername.TabIndex = 14;
             this.picUsername.TabStop = false;
             // 
+            // monkeyIcon
+            // 
+            this.monkeyIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.monkeyIcon.Image = global::TienDien.Properties.Resources.hear_no_evil_monkey_130px;
+            this.monkeyIcon.Location = new System.Drawing.Point(80, 30);
+            this.monkeyIcon.Margin = new System.Windows.Forms.Padding(2);
+            this.monkeyIcon.Name = "monkeyIcon";
+            this.monkeyIcon.Size = new System.Drawing.Size(130, 130);
+            this.monkeyIcon.TabIndex = 10;
+            this.monkeyIcon.TabStop = false;
+            // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(927, 585);
+            this.ClientSize = new System.Drawing.Size(695, 475);
+            this.Controls.Add(this.picEye);
             this.Controls.Add(this.picPassword);
             this.Controls.Add(this.picUsername);
             this.Controls.Add(this.label3);
@@ -283,7 +286,6 @@
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "LoginForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -292,9 +294,10 @@
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Mouse_Move);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.elecIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEye)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUsername)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monkeyIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -310,12 +313,13 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox elecIcon;
+        private System.Windows.Forms.PictureBox monkeyIcon;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox picUsername;
         private System.Windows.Forms.PictureBox picPassword;
+        private System.Windows.Forms.PictureBox picEye;
     }
 }
 

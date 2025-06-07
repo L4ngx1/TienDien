@@ -7,84 +7,146 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TienDien.Admin
 {
     public partial class UserCtrlQuanLyHD : UserControl
     {
-        Modify modify = new Modify();
         public UserCtrlQuanLyHD()
         {
             InitializeComponent();
-        }
-        public object SoDienThang(int thang)
-        {
-            string query1 = $@"SELECT SUM(SoDien) FROM HoaDon WHERE ThangHoaDon = {thang}";
-            object sodien = modify.CmdGet(query1);
-            return sodien;
-        }
-
-        private void UserCtrlQuanLyHD_Load(object sender, EventArgs e)
-        {
-            dataGridView1.DataSource = modify.all_ADMIN();
-            this.chart1.Series["Số Điện"].Points.AddXY("1", SoDienThang(1));
-            this.chart1.Series["Số Điện"].Points.AddXY("2", SoDienThang(2));
-            this.chart1.Series["Số Điện"].Points.AddXY("3", SoDienThang(3));
-            this.chart1.Series["Số Điện"].Points.AddXY("4", SoDienThang(4));
-            this.chart1.Series["Số Điện"].Points.AddXY("5", SoDienThang(5));
-            this.chart1.Series["Số Điện"].Points.AddXY("6", SoDienThang(6));
-            this.chart1.Series["Số Điện"].Points.AddXY("7", SoDienThang(7));
-            this.chart1.Series["Số Điện"].Points.AddXY("8", SoDienThang(8));
-            this.chart1.Series["Số Điện"].Points.AddXY("9", SoDienThang(9));
-            this.chart1.Series["Số Điện"].Points.AddXY("10", SoDienThang(10));
-            this.chart1.Series["Số Điện"].Points.AddXY("11", SoDienThang(11));
-            this.chart1.Series["Số Điện"].Points.AddXY("12", SoDienThang(12));
+            Modify modify = new Modify();
+            dataGridView1.DataSource = modify.GetHoaDon_QLHD();
+            if (cbbChonTK != null)
+            {
+                modify.LoadComboboxKhachHang(cbbChonTK);
+            }
         }
 
-        private void btnChuaThanhToan_Click(object sender, EventArgs e)
+        private void btnLuu_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = modify.ChuaThanhToan_ADMIN();
-        }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            dataGridView1.DataSource = modify.all_ADMIN();
-        }
-
-        private void btnThongKe_Click(object sender, EventArgs e)
-        {
-            int thanghoadon = (int)numThang.Value;
             try
             {
-                string query1 = $@"SELECT TOP 1 tk.TenTaiKhoan FROM HoaDon hd INNER JOIN TaiKhoan tk ON hd.TenTaiKhoan = tk.TenTaiKhoan WHERE ThangHoaDon = {thanghoadon} ORDER BY SoDien DESC";
-                object tentk = modify.CmdGet(query1);
-                lblTentk.Text = $"Tên tài khoản: {tentk}";
-
-                string query2 = $@"SELECT TOP 1 hd.MaHoaDon FROM HoaDon hd INNER JOIN TaiKhoan tk ON hd.TenTaiKhoan = tk.TenTaiKhoan WHERE ThangHoaDon = {thanghoadon} ORDER BY SoDien DESC";
-                object mahoadon = modify.CmdGet(query2);
-                lblMaHoaDon.Text = $"Mã hóa đơn: {mahoadon}";
-
-                string query3 = $@"SELECT TOP 1 hd.SoDien FROM HoaDon hd INNER JOIN TaiKhoan tk ON hd.TenTaiKhoan = tk.TenTaiKhoan WHERE ThangHoaDon = {thanghoadon} ORDER BY SoDien DESC";
-                object sodien = modify.CmdGet(query3);
-                lblSoDien.Text = $"Số điện tiêu thụ: {sodien} kWh";
-
-                string query4 = $@"SELECT TOP 1 tk.HoTen FROM HoaDon hd INNER JOIN TaiKhoan tk ON hd.TenTaiKhoan = tk.TenTaiKhoan WHERE ThangHoaDon = {thanghoadon} ORDER BY SoDien DESC";
-                object hoten = modify.CmdGet(query4);
-                lblHoTen.Text = $"Họ tên: {hoten}";
-
-                string query = $@"SELECT SUM(SoDien) FROM HoaDon WHERE ThangHoaDon = {thanghoadon}";
-                object TongSoDien = modify.CmdGet(query);
-                lblTongSoDien.Text = $"Tổng số điện tiêu thụ trong tháng {thanghoadon}: {TongSoDien} kWh";
+                Modify modify = new Modify();
+                string tentk = cbbChonTK.Text;
+                int thang = dateThangNam.Value.Month;
+                int nam = dateThangNam.Value.Year;
+                var existed = Modify.CheckExistHD(tentk, thang, nam);
+                if (existed)
+                {
+                    MessageBox.Show("Hóa đơn đã tồn tại cho kỳ này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                int chiSoCu;
+                int chiSoMoi;
+                if (!int.TryParse(txtChiSoCu.Text, out chiSoCu) || !int.TryParse(txtChiSoMoi.Text, out chiSoMoi))
+                {
+                    MessageBox.Show("Vui lòng nhập đúng định dạng chỉ số!", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (chiSoMoi < chiSoCu)
+                {
+                    MessageBox.Show("Chỉ số mới phải lớn hơn hoặc bằng chỉ số cũ!", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                double soDien = chiSoMoi - chiSoCu;
+                DienBacThang dienBacThang = new DienBacThang();
+                double tienDien = dienBacThang.dienBacThang(soDien);
+                modify.addChiSoDien(tentk, thang, nam, chiSoCu, chiSoMoi);
+                modify.AddHoaDon(tentk, soDien, thang, nam, tienDien);
+                dataGridView1.DataSource = modify.GetHoaDon_QLHD();
+                MessageBox.Show("Lưu hóa đơn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtChiSoMoi.Clear();
+                txtChiSoCu.Clear();
+                cbbChonTK.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi! " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (ex.Message.Contains("UNIQUE KEY constraint") && ex.Message.Contains("ChiSoDien"))
+                {
+                    MessageBox.Show("Chỉ số điện đã tồn tại cho kỳ này!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        private void cbbChonTK_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(cbbChonTK.Text))
+            {
+                Modify modify = new Modify();
+                var chiSoCu = modify.LayChiSoCuGanNhat(cbbChonTK.Text);
+                // Nếu không có chỉ số cũ, gán giá trị mặc định là 0
+                txtChiSoCu.Text = chiSoCu >= 0 ? chiSoCu.ToString() : "0";
+            }
+            else
+            {
+                txtChiSoCu.Text = "0";
             }
         }
 
-        private void chart1_Click(object sender, EventArgs e)
+        private void txtChiSoMoi_TextChanged(object sender, EventArgs e)
         {
+            int chiSoCu, chiSoMoi;
+            bool isChiSoCuValid = int.TryParse(txtChiSoCu.Text, out chiSoCu);
+            bool isChiSoMoiValid = int.TryParse(txtChiSoMoi.Text, out chiSoMoi);
+            double soDien = 0;
+            double tienDien = 0;
+            if (isChiSoCuValid && isChiSoMoiValid && chiSoMoi >= chiSoCu)
+            {
+                soDien = chiSoMoi - chiSoCu;
+                DienBacThang dienBacThang = new DienBacThang();
+                tienDien = dienBacThang.dienBacThang(soDien);
+                lblSoDien.Text = $"Số điện tiêu thụ: {soDien} kWh";
+                lblTienDien.Text = $"Tiền điện: {tienDien.ToString("N0")} VNĐ";
+            }
+            else
+            {
+                lblSoDien.Text = "Số điện tiêu thụ: 0 kWh";
+                lblTienDien.Text = "Tiền điện: 0 VNĐ";
+            }
+        }
 
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn một dòng để xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var selectedRow = dataGridView1.SelectedRows[0];
+            int maHoaDon = Convert.ToInt32(selectedRow.Cells["MaHoaDon"].Value);
+            string tentk = selectedRow.Cells["TenTaiKhoan"].Value.ToString();
+            int thang = Convert.ToInt32(selectedRow.Cells["ThangHoaDon"].Value);
+            int nam = Convert.ToInt32(selectedRow.Cells["NamHoaDon"].Value);
+
+            var confirmResult = MessageBox.Show(
+                "Bạn có chắc chắn muốn xóa hóa đơn này không?",
+                "Xác nhận xóa",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (confirmResult != DialogResult.Yes)
+            {
+                return;
+            }
+
+            try
+            {
+                Modify modify = new Modify();
+                modify.deleteHoaDon_ChiSoDien(maHoaDon, thang, nam, tentk);
+                dataGridView1.DataSource = modify.GetHoaDon_QLHD();
+                MessageBox.Show("Xóa hóa đơn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi khi xóa: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
     }

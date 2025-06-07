@@ -12,7 +12,7 @@ namespace TienDien
     {
         private static string GetConnectionString()
         {
-            string connectionString = @"Data Source=MSI;Integrated Security=True";
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ADMIN\source\repos\TienDien\TienDien\Database1.mdf;Integrated Security=True";
             return connectionString;
             //string dbPath = @"C:\Users\Modern15\source\repos\TienDien1\TienDien\Database1.mdf";
             //return $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={dbPath};Integrated Security=True";

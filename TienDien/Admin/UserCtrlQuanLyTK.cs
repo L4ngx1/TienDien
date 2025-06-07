@@ -33,12 +33,6 @@ namespace TienDien.Admin
                 MessageBox.Show("Lỗi!!" + ex.Message, "Lỗi!!");
             }
         }
-        private string GetCellValue(DataGridViewRow row, string columnName, int fallbackIndex)
-        {
-            if (dataGridView1.Columns.Contains(columnName))
-                return row.Cells[columnName].Value?.ToString() ?? "";
-            return row.Cells.Count > fallbackIndex ? row.Cells[fallbackIndex].Value?.ToString() ?? "" : "";
-        }
         public void reset()
         {
             txtUsername.Text = "";
@@ -64,40 +58,42 @@ namespace TienDien.Admin
         }
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 0)
+            if (dataGridView1.CurrentRow != null && dataGridView1.CurrentRow.Index != -1)
             {
-                MessageBox.Show("Vui lòng chọn một dòng để sửa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                DataGridViewRow selectedRow = dataGridView1.SelectedRows.Count > 0 ? dataGridView1.SelectedRows[0] : null;
+                if (selectedRow == null)
+                {
+                    MessageBox.Show("Vui lòng chọn một dòng để sửa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                string tentk = selectedRow.Cells["TenTaiKhoan"].Value.ToString();
+                string mk = selectedRow.Cells["MatKhau"].Value.ToString();
+                string email = selectedRow.Cells["Email"].Value.ToString();
+                string hoten = selectedRow.Cells["HoTen"].Value.ToString();
+                string sdt = selectedRow.Cells["SoDienThoai"].Value.ToString();
+                string diachi = selectedRow.Cells["DiaChi"].Value.ToString();
+
+                txtUsername.Text = tentk;
+                txtPassword.Text = mk;
+                txtEmail.Text = email;
+                txtHoTen.Text = hoten;
+                txtSoDienThoai.Text = sdt;
+                txtDiaChi.Text = diachi;
+
+                btnHandleSuaTK.Visible = true;
+                btnThem.Visible = false;
+                btnThoat.Visible = true;
             }
-
-            var selectedRow = dataGridView1.SelectedRows[0];
-            string tentk = GetCellValue(selectedRow, "TenTaiKhoan", 0);
-            if (string.IsNullOrEmpty(tentk))
-            {
-                MessageBox.Show("Dòng được chọn không hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            txtUsername.Text = tentk;
-            txtPassword.Text = GetCellValue(selectedRow, "MatKhau", 1);
-            txtEmail.Text = GetCellValue(selectedRow, "Email", 2);
-            txtHoTen.Text = GetCellValue(selectedRow, "HoTen", 3);
-            txtSoDienThoai.Text = GetCellValue(selectedRow, "SoDienThoai", 4);
-            txtDiaChi.Text = GetCellValue(selectedRow, "DiaChi", 5);
-
-            btnHandleSuaTK.Visible = true;
-            btnThem.Visible = false;
-            btnThoat.Visible = true;
         }
         private void btnHandleSuaTK_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 0)
+            DataGridViewRow selectedRow = dataGridView1.SelectedRows.Count > 0 ? dataGridView1.SelectedRows[0] : null;
+            if (selectedRow == null)
             {
                 MessageBox.Show("Vui lòng chọn một dòng để sửa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            string tentk = GetCellValue(dataGridView1.SelectedRows[0], "TenTaiKhoan", 0);
+            string tentk = selectedRow.Cells["TenTaiKhoan"].Value.ToString();
             if (string.IsNullOrEmpty(tentk))
             {
                 MessageBox.Show("Dòng được chọn không hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -122,13 +118,13 @@ namespace TienDien.Admin
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 0)
+            DataGridViewRow selectedRow = dataGridView1.SelectedRows.Count > 0 ? dataGridView1.SelectedRows[0] : null;
+            if (selectedRow == null)
             {
-                MessageBox.Show("Vui lòng chọn một dòng để xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng chọn một dòng để sửa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            string tentk = GetCellValue(dataGridView1.SelectedRows[0], "TenTaiKhoan", 0);
+            string tentk = selectedRow.Cells["TenTaiKhoan"].Value.ToString();
             if (string.IsNullOrEmpty(tentk))
             {
                 MessageBox.Show("Dòng được chọn không hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -139,7 +135,7 @@ namespace TienDien.Admin
             {
                 var modify = new Modify();
                 modify.deleteAccount(tentk);
-                
+
                 ReloadData();
                 reset();
             }
@@ -156,5 +152,6 @@ namespace TienDien.Admin
             btnThem.Visible = true;
             reset();
         }
+        
     }
 }

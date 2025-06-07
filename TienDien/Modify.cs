@@ -307,6 +307,13 @@ namespace TienDien
                         cmdHoaDon.ExecuteNonQuery();
                     }
 
+                    string deleteChiSoDienQuery = "DELETE FROM ChiSoDien WHERE TenTaiKhoan = @TenTaiKhoan";
+                    using (var cmdChiSoDien = new SqlCommand(deleteChiSoDienQuery, conn))
+                    {
+                        cmdChiSoDien.Parameters.AddWithValue("@TenTaiKhoan", tenTaiKhoan);
+                        cmdChiSoDien.ExecuteNonQuery();
+                    }
+
                     string deleteTaiKhoanQuery = "DELETE FROM TaiKhoan WHERE TenTaiKhoan = @TenTaiKhoan";
                     using (var cmdTaiKhoan = new SqlCommand(deleteTaiKhoanQuery, conn))
                     {
@@ -320,6 +327,146 @@ namespace TienDien
                     MessageBox.Show("Có lỗi xảy ra khi xóa tài khoản!\n" + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+        public void LoadComboboxKhachHang(ComboBox cb)
+        {
+            string query = "SELECT TenTaiKhoan FROM TaiKhoan";
+            DataTable dt = GetDataTable(query);
+            cb.DataSource = dt;
+            cb.DisplayMember = "TenTaiKhoan";
+            cb.ValueMember = "TenTaiKhoan";
+            cb.SelectedIndex = -1; 
+        }
+        public static bool CheckExistHD(string tentk, int thang, int nam)
+        {
+            string query = "SELECT COUNT(*) FROM HoaDon WHERE TenTaiKhoan = @TenTaiKhoan AND ThangHoaDon = @ThangHoaDon AND NamHoaDon = @NamHoaDon";
+            using (var connection = Connection.GetSqlConnection())
+            using (var command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@TenTaiKhoan", tentk);
+                command.Parameters.AddWithValue("@ThangHoaDon", thang);
+                command.Parameters.AddWithValue("@NamHoaDon", nam);
+                connection.Open();
+                int count = (int)command.ExecuteScalar();
+                return count > 0;
+            }
+        }
+        public void AddHoaDon(string tentk, double sodien, int thang, int nam, double thanhTien)
+        {
+            string query = "INSERT INTO HoaDon (TenTaiKhoan, SoDien, ThangHoaDon, NamHoaDon, ThoiGianTao, ThanhTien) VALUES (@TenTaiKhoan, @SoDien, @ThangHoaDon, @NamHoaDon, @ThoiGianTao, @ThanhTien)";
+            Command(query,
+                new SqlParameter("@TenTaiKhoan", tentk),
+                new SqlParameter("@SoDien", sodien),
+                new SqlParameter("@ThangHoaDon", thang),
+                new SqlParameter("@NamHoaDon", nam),
+                new SqlParameter("@ThoiGianTao", DateTime.Now),
+                new SqlParameter("@ThanhTien", thanhTien));
+        }
+        public void addChiSoDien(string tentk, int thang, int nam, float chiSoCu, float chiSoMoi)
+        {
+            string query = "INSERT INTO ChiSoDien (TenTaiKhoan, Thang, Nam, ChiSoCu, ChiSoMoi) VALUES (@TenTaiKhoan, @Thang, @Nam, @ChiSoCu, @ChiSoMoi)";
+            Command(query,
+                new SqlParameter("@TenTaiKhoan", tentk),
+                new SqlParameter("@Thang", thang),
+                new SqlParameter("@Nam", nam),
+                new SqlParameter("@ChiSoCu", chiSoCu),
+                new SqlParameter("@ChiSoMoi", chiSoMoi));
+        }
+        public double LayChiSoCuGanNhat(string tentk)
+        {
+            string query = @"
+                SELECT TOP 1 ChiSoMoi
+                FROM ChiSoDien
+                WHERE TenTaiKhoan = @TenTaiKhoan
+                ORDER BY Nam DESC, Thang DESC";
+
+            using (var conn = Connection.GetSqlConnection())
+            using (var cmd = new SqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@TenTaiKhoan", tentk);
+                conn.Open();
+                object result = cmd.ExecuteScalar();
+                if (result != null && result != DBNull.Value)
+                {
+                    return Convert.ToDouble(result);
+                }
+            }
+            return 0;
+        }
+        public DataTable GetHoaDon_QLHD()
+        {
+            string query = @"
+                SELECT 
+                    *
+                FROM 
+                    HoaDon ";
+            DataTable dt = GetDataTable(query);
+            return dt;
+        }
+        public void deleteHoaDon_ChiSoDien(int maHoaDon, int thang, int nam, string tenTaiKhoan)
+        {
+            using (var conn = Connection.GetSqlConnection())
+            {
+                conn.Open();
+                // Xóa hóa đơn theo MaHoaDon
+                string deleteHoaDonQuery = "DELETE FROM HoaDon WHERE MaHoaDon = @MaHoaDon";
+                using (var cmdHoaDon = new SqlCommand(deleteHoaDonQuery, conn))
+                {
+                    cmdHoaDon.Parameters.AddWithValue("@MaHoaDon", maHoaDon);
+                    cmdHoaDon.ExecuteNonQuery();
+                }
+                // Xóa chỉ số điện theo TenTaiKhoan, Thang, Nam
+                string deleteChiSoDienQuery = "DELETE FROM ChiSoDien WHERE TenTaiKhoan = @TenTaiKhoan AND Thang = @Thang AND Nam = @Nam";
+                using (var cmdChiSoDien = new SqlCommand(deleteChiSoDienQuery, conn))
+                {
+                    cmdChiSoDien.Parameters.AddWithValue("@TenTaiKhoan", tenTaiKhoan);
+                    cmdChiSoDien.Parameters.AddWithValue("@Thang", thang);
+                    cmdChiSoDien.Parameters.AddWithValue("@Nam", nam);
+                    cmdChiSoDien.ExecuteNonQuery();
+                }
+            }
+        }
+        public void UpdateThongTinCaNhan(string tentk, string hoTen, string email, string sdt, string diachi)
+        {
+            string query = "UPDATE TaiKhoan SET HoTen = @HoTen, Email = @Email, SoDienThoai = @SoDienThoai, DiaChi = @DiaChi WHERE TenTaiKhoan = @TenTaiKhoan";
+            Command(query,
+                new SqlParameter("@TenTaiKhoan", tentk),
+                new SqlParameter("@HoTen", hoTen),
+                new SqlParameter("@Email", email),
+                new SqlParameter("@SoDienThoai", sdt),
+                new SqlParameter("@DiaChi", diachi));
+        }
+        public void updateMatKhau(string tentk, string mkCu, string mkMoi)
+        {
+            if (string.IsNullOrWhiteSpace(mkCu) || string.IsNullOrWhiteSpace(mkMoi))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // Kiểm tra mật khẩu cũ có đúng không
+            string checkQuery = "SELECT COUNT(*) FROM TaiKhoan WHERE TenTaiKhoan = @TenTaiKhoan AND MatKhau = @MatKhauCu";
+            int count = 0;
+            using (var conn = Connection.GetSqlConnection())
+            using (var cmd = new SqlCommand(checkQuery, conn))
+            {
+                cmd.Parameters.AddWithValue("@TenTaiKhoan", tentk);
+                cmd.Parameters.AddWithValue("@MatKhauCu", mkCu);
+                conn.Open();
+                count = (int)cmd.ExecuteScalar();
+            }
+
+            if (count == 0)
+            {
+                MessageBox.Show("Mật khẩu cũ không đúng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            string query = "UPDATE TaiKhoan SET MatKhau = @MatKhau WHERE TenTaiKhoan = @TenTaiKhoan";
+            Command(query,
+                new SqlParameter("@TenTaiKhoan", tentk),
+                new SqlParameter("@MatKhau", mkMoi));
+            MessageBox.Show("Đổi mật khẩu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

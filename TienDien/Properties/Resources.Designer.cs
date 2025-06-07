@@ -83,6 +83,16 @@ namespace TienDien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap customer_130px {
+            get {
+                object obj = ResourceManager.GetObject("customer_130px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dishwasher_40px {
             get {
                 object obj = ResourceManager.GetObject("dishwasher_40px", resourceCulture);
@@ -123,6 +133,16 @@ namespace TienDien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eye_20px {
+            get {
+                object obj = ResourceManager.GetObject("eye_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fan_40px {
             get {
                 object obj = ResourceManager.GetObject("fan_40px", resourceCulture);
@@ -143,9 +163,29 @@ namespace TienDien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hear_no_evil_monkey_130px {
+            get {
+                object obj = ResourceManager.GetObject("hear_no_evil_monkey_130px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Home_23px {
             get {
                 object obj = ResourceManager.GetObject("Home_23px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap invisible_20px {
+            get {
+                object obj = ResourceManager.GetObject("invisible_20px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,6 +233,16 @@ namespace TienDien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap see_no_evil_monkey_130px {
+            get {
+                object obj = ResourceManager.GetObject("see_no_evil_monkey_130px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap shutdown_25px {
             get {
                 object obj = ResourceManager.GetObject("shutdown_25px", resourceCulture);
@@ -203,9 +253,9 @@ namespace TienDien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap test_account_23px {
+        internal static System.Drawing.Bitmap test_account_100px {
             get {
-                object obj = ResourceManager.GetObject("test_account_23px", resourceCulture);
+                object obj = ResourceManager.GetObject("test_account_100px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

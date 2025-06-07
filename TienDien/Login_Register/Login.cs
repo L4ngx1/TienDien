@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TienDien.Login_Register;
 
 namespace TienDien
 {
@@ -41,7 +42,6 @@ namespace TienDien
         {
             Application.Exit();
         }
-        public static string CurrentUsername { get; set; }
         private void btnLogin_Click(object sender, EventArgs e)
         {
             Modify modify = new Modify();
@@ -49,23 +49,26 @@ namespace TienDien
             string matkhau = txtPassword.Text;
             if (tentk == "admin" && matkhau == "admin")
             {
-                AdminForm form= new AdminForm();
+                Season.CurrentUsername = tentk;
+                AdminForm form = new AdminForm();
+                form.ShowDialog();
                 txtPassword.Text = "";
                 txtUsername.Text = "";
-                form.ShowDialog();
-
             }
-            else if (tentk.Trim() == "") { MessageBox.Show("Vui lòng nhập tên tài khoản!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
-            else if (matkhau.Trim() == "") { MessageBox.Show("Vui lòng nhập mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); }
-            else {
+            else if (matkhau.Trim() == "")
+            {
+                MessageBox.Show("Vui lòng nhập mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
                 string query = "Select * from TaiKhoan where TenTaiKhoan = '" + tentk + "' and MatKhau = '" + matkhau + "'";
                 if (modify.TaiKhoans(query).Count != 0)
                 {
-                    CurrentUsername = tentk;
+                    Season.CurrentUsername = tentk;
                     TienDienApp appForm = new TienDienApp();
+                    appForm.ShowDialog();
                     txtPassword.Text = "";
                     txtUsername.Text = "";
-                    appForm.ShowDialog();
                 }
                 else
                 {
@@ -85,6 +88,15 @@ namespace TienDien
         {
             QuenMatKhau quenMatKhau = new QuenMatKhau();   
             quenMatKhau.ShowDialog();
+        }
+        bool isPasswordShown = false;
+
+        private void picEye_Click(object sender, EventArgs e)
+        {
+            isPasswordShown = !isPasswordShown;
+            txtPassword.UseSystemPasswordChar = !isPasswordShown;
+            picEye.Image = isPasswordShown ? Properties.Resources.eye_20px : Properties.Resources.invisible_20px;
+            monkeyIcon.Image = isPasswordShown ? Properties.Resources.see_no_evil_monkey_130px : Properties.Resources.hear_no_evil_monkey_130px;
         }
     }
 }
