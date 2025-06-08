@@ -38,7 +38,7 @@ namespace TienDien
             string mahoadon = TinhTienDien.SelectedMahoadon;
             string tentk = TinhTienDien.SelectedUsername;
             Modify modify = new Modify();
-            reportViewer1.LocalReport.ReportEmbeddedResource = "TienDien.HoaDon.Report1.rdlc";
+            reportViewer1.LocalReport.ReportEmbeddedResource = "TienDien.MainApp.HoaDon.Report1.rdlc";
             ReportDataSource reportDataSource1 = new ReportDataSource();
             ReportDataSource reportDataSource2 = new ReportDataSource();
             reportDataSource1.Name = "DataSet1";
