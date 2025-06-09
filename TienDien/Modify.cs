@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
 using System.Data;
-using System.Reflection.Emit;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 namespace TienDien
 {
@@ -335,7 +331,7 @@ namespace TienDien
             cb.DataSource = dt;
             cb.DisplayMember = "TenTaiKhoan";
             cb.ValueMember = "TenTaiKhoan";
-            cb.SelectedIndex = -1; 
+            cb.SelectedIndex = -1;
         }
         public static bool CheckExistHD(string tentk, int thang, int nam)
         {

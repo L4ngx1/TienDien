@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
 
@@ -23,7 +17,7 @@ namespace TienDien
         }
         private void Mouse_Move(object sender, MouseEventArgs e)
         {
-           if (e.Button == MouseButtons.Left)
+            if (e.Button == MouseButtons.Left)
             {
                 this.Location = new Point(this.Location.X + (e.X - mouseLocation.X), this.Location.Y + (e.Y - mouseLocation.Y));
             }

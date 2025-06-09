@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TienDien
@@ -27,7 +20,7 @@ namespace TienDien
                 string query = "Select * from TaiKhoan where Email ='" + email + "'";
                 if (modify.TaiKhoans(query).Count != 0)
                 {
-                    MessageBox.Show("Mật khẩu của bạn là: " + modify.TaiKhoans(query)[0].MatKhau,"Restore",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show("Mật khẩu của bạn là: " + modify.TaiKhoans(query)[0].MatKhau, "Restore", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
                 else
@@ -39,7 +32,7 @@ namespace TienDien
         }
 
 
-      
+
 
 
         private void btnClose_Click(object sender, EventArgs e)

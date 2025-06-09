@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TienDien.Login_Register;
 
@@ -86,7 +80,7 @@ namespace TienDien
         }
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            QuenMatKhau quenMatKhau = new QuenMatKhau();   
+            QuenMatKhau quenMatKhau = new QuenMatKhau();
             quenMatKhau.ShowDialog();
         }
         bool isPasswordShown = false;

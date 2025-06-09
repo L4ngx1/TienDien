@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TienDien.Admin
 {
@@ -16,12 +8,6 @@ namespace TienDien.Admin
         public UserCtrlQuanLyHD()
         {
             InitializeComponent();
-            Modify modify = new Modify();
-            dataGridView1.DataSource = modify.GetHoaDon_QLHD();
-            if (cbbChonTK != null)
-            {
-                modify.LoadComboboxKhachHang(cbbChonTK);
-            }
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -149,5 +135,14 @@ namespace TienDien.Admin
             }
         }
 
+        private void UserCtrlQuanLyHD_Load(object sender, EventArgs e)
+        {
+            Modify modify = new Modify();
+            dataGridView1.DataSource = modify.GetHoaDon_QLHD();
+            if (cbbChonTK != null)
+            {
+                modify.LoadComboboxKhachHang(cbbChonTK);
+            }
+        }
     }
 }
