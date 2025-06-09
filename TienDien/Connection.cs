@@ -1,12 +1,12 @@
 ﻿using System.Data.SqlClient;
-
+using System.Configuration;
 namespace TienDien
 {
     internal class Connection
     {
         private static string GetConnectionString()
         {
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\TienDien\TienDien\Database1.mdf;Integrated Security=True";
+            string connectionString = ConfigurationManager.ConnectionStrings["TienDien.Properties.Settings.Database1ConnectionString"].ConnectionString;
             return connectionString;
         }
 
